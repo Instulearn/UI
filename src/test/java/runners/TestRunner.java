@@ -26,6 +26,6 @@ public class TestRunner {
 	@BeforeClass
 	public static void setup() {
 		// Test çalışmaya başlamadan önce loglama yapılır
-		logger.info("Cucumber Test Runner başlatılıyor...");bozma denemesi!
+		logger.info("Cucumber Test Runner başlatılıyor...");
 	}
 }
