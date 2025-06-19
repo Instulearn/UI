@@ -1,8 +1,8 @@
 
 Kendi adimizla Branch olusturma
 
-git branch <kendi adim'iz>
-git checkout <kendi adim'iz>
+git branch <kendi adin'iz>
+git checkout <kendi adin'iz>
 
 Sonraki islemler
 
@@ -10,13 +10,13 @@ Pull islemleri once yapilir
 
 git checkout main
 git pull
-git checkout <kendi adim'iz>
+git checkout <kendi adin'iz>
 
 Github ilk push
 
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/Instulearn/UI.git
+git push --set-upstream origin <kendi adiniz>
 
 Git Push islemi. kendi branchinizda oldugunuzdan emin olun
 
