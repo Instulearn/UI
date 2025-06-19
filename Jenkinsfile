@@ -53,14 +53,14 @@ pipeline {
             steps {
                 script {
                     // Assumes you have push rights via SSH key and "main" branch exists
-                    bat '''
+                    bat """
                         git config user.name "jenkins"
                         git config user.email "jenkins@yourdomain.com"
                         git fetch origin main
                         git checkout main
                         git merge origin/${BRANCH_NAME}
                         git push origin main
-                    '''
+                    """
                 }
             }
         }
