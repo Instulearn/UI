@@ -13,6 +13,11 @@ pipeline {
             steps {
                 bat 'mvn clean install'
             }
+            post {
+                failure {
+                    error('Build failed, stopping pipeline.')
+                }
+            }
         }
 
         stage('Merge to main') {
