@@ -27,7 +27,5 @@ public class TestRunner {
 	public static void setup() {
 		// Test çalışmaya başlamadan önce loglama yapılır
 		logger.info("Cucumber Test Runner başlatılıyor...");
-
-		//deneme yapmaktayım
 	}
 }
