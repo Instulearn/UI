@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     // Assumes you have push rights via SSH key and "main" branch exists
-                    sh '''
+                    bat '''
                         git config user.name "jenkins"
                         git config user.email "jenkins@yourdomain.com"
                         git fetch origin main
