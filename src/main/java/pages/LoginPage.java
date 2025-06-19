@@ -6,15 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-	@FindBy(id = "username")
-	private WebElement usernameInput;
-
-	@FindBy(id = "password")
-	private WebElement passwordInput;
-
-	@FindBy(id = "loginButton")
-	private WebElement loginButton;
-
 	// Constructor
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -26,6 +17,17 @@ public class LoginPage extends BasePage {
 		type(passwordInput, password);
 		click(loginButton);
 	}
+
+    // Login Page Locators
+
+	@FindBy(id = "username")
+	private WebElement usernameInput;
+
+	@FindBy(id = "password")
+	private WebElement passwordInput;
+
+	@FindBy(id = "loginButton")
+	private WebElement loginButton;
 
 
 }
