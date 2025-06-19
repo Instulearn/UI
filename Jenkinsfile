@@ -15,7 +15,22 @@ pipeline {
             }
             post {
                 failure {
-                    error('Build failed, stopping pipeline.')
+                    script {
+                        def prNumber = env.CHANGE_ID // Multibranch PR numarası
+                        if (prNumber) {
+                            echo "Build failed on PR #${prNumber}, closing PR..."
+                            def repo = 'Instulearn/UI'  // GitHub repo adı owner/repo şeklinde
+                            def token = credentials('github-token')
+
+                            bat """
+                            curl -X PATCH -H "Authorization: token ${token}" \
+                            -H "Accept: application/vnd.github+json" \
+                            https://api.github.com/repos/${repo}/pulls/${prNumber} \
+                            -d '{"state":"closed"}'
+                            """
+                        }
+                    }
+                    error('Build failed, pipeline stopped and PR closed.')
                 }
             }
         }
