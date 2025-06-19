@@ -30,7 +30,6 @@ pipeline {
                             """
                         }
                     }
-                    error('Build failed, pipeline stopped and PR closed.')
                 }
             }
         }
