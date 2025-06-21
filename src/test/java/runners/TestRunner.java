@@ -1,13 +1,12 @@
 package runners;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
+import org.testng.annotations.BeforeClass;
 
-@RunWith(Cucumber.class)
+
 @CucumberOptions(
 		features = "src/test/java/features", // Feature dosyalarının yolu
 		glue = "stepdefinitions",                // Step Definitions'ın yolu
@@ -20,11 +19,11 @@ import org.junit.runner.RunWith;
 		monochrome = true,                         // Konsol çıktısını daha okunabilir hale getirir
 		tags = "@google"                           // Yalnızca belirtilen etiketli senaryolar çalıştırılır
 )
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests{
 	private static final Logger logger = LogManager.getLogger(TestRunner.class);
 
 	@BeforeClass
-	public static void setup() {
+	public void setup() {
 		// Test çalışmaya başlamadan önce loglama yapılır
 		logger.info("Cucumber Test Runner başlatılıyor...");
 	}

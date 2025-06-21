@@ -3,6 +3,7 @@ package utils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -10,9 +11,18 @@ import java.time.Duration;
 public class JSUtilities {
 
     // A function that scrolls the page up to the specified element.
-    public static void scrollToElement(WebDriver driver, WebElement element) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    public static void scrollToVisibleElement(WebDriver driver, WebElement element) {
+        // Wait until the element is visible
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(element));
+
+        // Scroll smoothly to the element
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});",
+                element);
     }
+
+
 
     // A function that clicks the specified element using the JavaScriptExecutor.
     public static void clickWithJS(WebDriver driver, WebElement element) {
