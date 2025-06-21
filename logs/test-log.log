@@ -1,0 +1,182 @@
+2025-06-20 15:43:50 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 15:43:50 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 15:43:56 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 15:43:56 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 15:43:56 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 17:50:14 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 17:50:14 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 17:50:16 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 17:50:16 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 17:50:16 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:04:26 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:04:26 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:04:28 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:04:28 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:04:28 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:05:33 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:05:33 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:05:34 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:05:38 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:05:38 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:08:20 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:08:20 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:08:22 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:08:25 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:08:26 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:14:12 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:14:12 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:14:13 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:14:17 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:14:17 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:18:05 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:18:05 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:18:06 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:18:10 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:18:10 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:18:45 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:18:46 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:18:47 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:18:50 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:18:50 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:22:04 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:22:04 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:22:05 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:22:10 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:22:10 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:27:06 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:27:06 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:27:07 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:27:10 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:27:10 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:30:14 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:30:14 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:30:15 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:30:19 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:30:19 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:37:01 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:37:01 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:37:02 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:37:06 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:37:06 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:55:35 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:55:35 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:55:37 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:55:40 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:55:40 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:58:14 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:58:15 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:58:16 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:58:30 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:58:31 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-20 18:59:20 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-20 18:59:20 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:59:21 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-20 18:59:24 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-20 18:59:24 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 01:55:52 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 01:55:52 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 01:55:54 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 01:55:59 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 01:55:59 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 01:59:14 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 01:59:14 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 01:59:15 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 01:59:20 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 01:59:20 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 02:42:58 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 02:42:58 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 02:43:00 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 02:43:03 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 02:43:03 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 02:51:44 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 02:51:45 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 02:51:46 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 02:51:49 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 02:51:49 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 02:59:08 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 02:59:08 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 02:59:10 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 02:59:13 [main] ERROR utils.LoggerHelper - Test başarısız oldu: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 02:59:13 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:03:39 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 03:03:39 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 03:03:41 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:03:47 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 03:03:47 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:20:02 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 03:20:02 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 03:20:04 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:20:10 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 03:20:10 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:22:42 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 03:22:42 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 03:22:44 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:22:50 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates kartı gorunurluk Testi
+2025-06-21 03:22:50 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:48:00 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 03:48:00 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 03:48:01 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:48:07 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 03:48:07 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:48:07 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 03:48:08 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:48:16 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 03:48:16 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:49:21 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 03:49:21 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 03:49:23 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:49:31 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 03:49:31 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:49:31 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 03:49:32 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:49:42 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 03:49:42 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:50:58 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 03:51:00 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:51:10 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 03:51:10 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 03:56:58 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 03:56:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-21 03:56:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-21 03:57:00 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 03:57:08 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 03:57:08 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 04:00:58 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 04:00:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-21 04:00:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-21 04:01:00 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 04:01:11 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 04:01:12 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 04:01:44 [main] WARN  org.testng.internal.Configuration - Detected a static method [runners.TestRunner.setup()]. Static configuration methods can cause unexpected behavior.
+2025-06-21 04:01:44 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\alpay\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+2025-06-21 04:01:45 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 04:01:45 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 04:01:45 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-21 04:01:45 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-21 04:01:46 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 04:01:54 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 04:01:54 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 04:01:54 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 04:01:54 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-21 04:01:54 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-21 04:01:55 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 04:02:05 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 04:02:05 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 04:05:31 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\alpay\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+2025-06-21 04:05:31 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-21 04:05:31 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 04:05:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-21 04:05:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-21 04:05:33 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 04:05:41 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-21 04:05:41 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-21 04:05:41 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 04:05:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-21 04:05:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-21 04:05:42 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-21 04:05:51 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-21 04:05:51 [main] INFO  utils.LoggerHelper - Driver kapatıldı.

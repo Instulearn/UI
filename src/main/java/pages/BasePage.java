@@ -15,19 +15,18 @@ public class BasePage {
 
 	// Constructor
 	public BasePage(WebDriver driver) {
-		this.driver = driver;
 
-		// Timeout değerini config'den al
+        // Timeout değerini config'den al
 		String timeoutValue = ConfigReader.getProperty("timeout");
 		if (timeoutValue == null || timeoutValue.isEmpty()) {
 			throw new RuntimeException("Timeout value is not set or invalid in config.properties!");
 		}
 
 		// WebDriverWait başlat
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(timeoutValue)));
+		this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(Integer.parseInt(timeoutValue)));
 
 		// PageFactory ile elementleri başlat
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(this.driver, this);
 	}
 
 	// Click methodu
