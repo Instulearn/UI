@@ -1,7 +1,17 @@
+<<<<<<< Updated upstream
 // Jenkinsfile
 pipeline {
     agent any
 
+=======
+pipeline {
+    agent any
+
+    environment {
+        BRANCH_NAME = "${env.GIT_BRANCH.replaceFirst('origin/', '')}"
+    }
+
+>>>>>>> Stashed changes
     stages {
         stage('Checkout') {
             steps {
@@ -11,6 +21,7 @@ pipeline {
 
         stage('Build') {
             steps {
+<<<<<<< Updated upstream
                 bat 'mvn clean install'
             }
             post {
@@ -31,11 +42,15 @@ pipeline {
                         }
                     }
                 }
+=======
+                bat 'mvn clean install' // Windows kullanıyorsan bat, Unix ise sh
+>>>>>>> Stashed changes
             }
         }
 
         stage('Merge to main') {
             when {
+<<<<<<< Updated upstream
                 branch 'main'
             }
             steps {
@@ -61,6 +76,19 @@ pipeline {
                         git push origin main
                     """
                 }
+=======
+                expression { env.BRANCH_NAME != 'main' }
+            }
+            steps {
+                bat '''
+                    git config user.name "jenkins"
+                    git config user.email "jenkins@yourdomain.com"
+                    git checkout main
+                    git pull origin main
+                    git merge origin/%BRANCH_NAME%
+                    git push origin main
+                '''
+>>>>>>> Stashed changes
             }
         }
     }
