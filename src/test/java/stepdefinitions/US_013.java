@@ -25,7 +25,7 @@ public class US_013 {
             throw new AssertionError("Kart görünür değil: " + validate);
         }
     }
-
+    //jenkinsdenemesi
     @Then("Validate Certificate kartina tiklar")
     public void kartin_uzerine_tiklar() {
         WebElement kart = new AlpayPage(driver).validateCard;
