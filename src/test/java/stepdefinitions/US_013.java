@@ -53,4 +53,6 @@ public class US_013 {
         ReusableMethods.bekle(2);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/instructors");
     }
+
+    //deneme
 }
