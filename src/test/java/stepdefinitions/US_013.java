@@ -53,4 +53,5 @@ public class US_013 {
         ReusableMethods.bekle(2);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/instructors");
     }
+    //deneme saat 3:02 jenkins merge calisiyor ama merge edenin instulearn olmasi gerekiyor.
 }
