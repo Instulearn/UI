@@ -1,6 +1,7 @@
 package pages;
 
 import config.ConfigReader;
+import drivers.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
-	protected WebDriver driver;
+	protected WebDriver driver = DriverManager.getDriver();
 	protected WebDriverWait wait;
 
 	// Constructor
@@ -36,6 +37,11 @@ public class BasePage {
 
 	// Type (metin yazma) methodu
 	public void type(WebElement element, String text) {
-		wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(text);
+		if (element != null && text != null) {
+			wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(text);
+			System.out.println("Typed text: " + text);
+		} else {
+			System.out.println("Element or text is null");
+		}
 	}
 }

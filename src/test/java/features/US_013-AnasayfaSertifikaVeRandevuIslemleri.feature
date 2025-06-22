@@ -12,3 +12,5 @@ Feature: US_013 Anasayfada sertifika ve randevu işlemleri yönetilir
     Given kullanici anasayfaya gider
     When "Reserve a meeting" kartinin sayfada gorunur olup olmadigini kontrol eder.
     Then Reserve a meeting kartina tiklar
+
+

@@ -11,23 +11,31 @@ public class LoginPage extends BasePage {
 		super(driver);
 	}
 
-	// Login işlemi
-	public void login(String username, String password) {
-		type(usernameInput, username);
-		type(passwordInput, password);
-		click(loginButton);
-	}
-
     // Login Page Locators
 
-	@FindBy(id = "username")
-	private WebElement usernameInput;
+	@FindBy(xpath = "//*[@id='email']")
+	public  WebElement emailKutusu;
 
-	@FindBy(id = "password")
-	private WebElement passwordInput;
+	@FindBy(xpath = "//*[@id='password']")
+	public  WebElement passwordKutusu;
 
-	@FindBy(id = "loginButton")
-	private WebElement loginButton;
+	@FindBy(xpath = "//button[contains(text(), 'Login')]")
+	public  WebElement loginButonu;
+
+
+
+	// Login işlemi
+	public void login(String email, String password) {
+		try {
+			type(emailKutusu, email);
+			type(passwordKutusu, password);
+			click(loginButonu);
+			System.out.println("Login attempted with email: " + email);
+		} catch (Exception e) {
+			System.err.println("Login failed: " + e.getMessage());
+		}
+	}
+
 
 
 }

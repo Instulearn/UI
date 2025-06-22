@@ -1,0 +1,117 @@
+2025-06-22 01:37:00 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 01:37:01 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 01:37:02 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 01:37:03 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 01:37:04 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 01:37:04 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622013704.png
+2025-06-22 01:37:04 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 01:39:25 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 01:39:25 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 01:39:25 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 01:39:27 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 01:39:28 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 01:39:28 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622013928.png
+2025-06-22 01:39:28 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 01:40:49 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 01:40:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 01:40:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 01:40:50 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 01:40:51 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 01:40:52 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622014051.png
+2025-06-22 01:40:52 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 01:53:49 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 01:53:50 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 01:53:50 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 01:53:51 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 01:53:54 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 01:53:55 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622015354.png
+2025-06-22 01:53:55 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 01:56:20 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-22 01:56:20 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 01:56:20 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 01:56:22 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 01:56:30 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-22 01:56:30 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 13:54:21 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 13:54:23 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 13:54:23 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 13:54:24 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 13:54:28 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 13:54:29 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622015428.png
+2025-06-22 13:54:29 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 13:56:27 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 13:56:27 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 13:56:27 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 13:56:28 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 13:56:33 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 13:56:34 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622015633.png
+2025-06-22 13:56:34 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:13:50 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:13:51 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:13:51 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:13:52 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:13:57 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:13:57 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622021357.png
+2025-06-22 14:13:57 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:14:50 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:14:50 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:14:50 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:14:51 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:14:56 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:14:57 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622021456.png
+2025-06-22 14:14:57 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:15:32 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:15:33 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:15:33 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:15:34 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:15:38 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:15:38 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622021538.png
+2025-06-22 14:15:38 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:19:07 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:19:07 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:19:07 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:19:08 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:19:13 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:19:13 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622021913.png
+2025-06-22 14:19:13 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:43:52 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:43:52 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:43:52 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:43:54 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:43:59 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:43:59 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622024359.png
+2025-06-22 14:43:59 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:45:05 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:45:05 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:45:05 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:45:06 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:45:10 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:45:10 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622024510.png
+2025-06-22 14:45:11 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:45:20 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:45:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:45:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:45:22 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:45:26 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:45:26 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622024526.png
+2025-06-22 14:45:27 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:46:26 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:46:26 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:46:26 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:46:28 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:46:31 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:46:32 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622024631.png
+2025-06-22 14:46:32 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 14:47:14 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 14:47:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 14:47:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 14:47:16 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 14:47:20 [main] ERROR utils.LoggerHelper - Test başarısız oldu: Login Olma Testi
+2025-06-22 14:47:21 [main] INFO  utils.LoggerHelper - Ekran görüntüsü alındı ve rapora eklendi: C:\Users\alpay\IdeaProjects\UI/target/Screenshots/FailedScenario_Login Olma Testi20250622024720.png
+2025-06-22 14:47:21 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-22 15:58:12 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-22 15:58:14 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-22 15:58:14 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-22 15:58:15 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-22 15:58:23 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: Login Olma Testi
+2025-06-22 15:58:24 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
