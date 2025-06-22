@@ -1,4 +1,4 @@
-// Jenkinsfile
+//Jenkins File
 pipeline {
     agent any
 
@@ -20,10 +20,10 @@ pipeline {
             post {
                 failure {
                     script {
-                        def prNumber = env.CHANGE_ID // Multibranch PR numarası
+                        def prNumber = env.CHANGE_ID
                         if (prNumber) {
                             echo "Build failed on PR #${prNumber}, closing PR..."
-                            def repo = 'Instulearn/UI'  // GitHub repo adı owner/repo şeklinde
+                            def repo = 'Instulearn/UI'
                             def token = credentials('github-token')
 
                             bat """
@@ -52,14 +52,33 @@ pipeline {
                 expression { env.BRANCH_NAME != 'main' }
             }
             steps {
-                bat '''
-                    git config user.name "jenkins"
-                    git config user.email "jenkins@yourdomain.com"
-                    git checkout main
-                    git pull origin main
-                    git merge origin/%BRANCH_NAME%
-                    git push origin main
-                '''
+                script {
+                    def prNumber = env.CHANGE_ID
+                    def repo = 'Instulearn/UI'
+                    def token = credentials('github-token')
+
+                    if (prNumber) {
+                        echo "Merging PR #${prNumber} via GitHub API..."
+
+                        bat """
+                        curl -X PUT -H "Authorization: token ${token}" ^
+                             -H "Accept: application/vnd.github+json" ^
+                             https://api.github.com/repos/${repo}/pulls/${prNumber}/merge ^
+                             -d "{\\"commit_title\\": \\"Auto-merged by Jenkins\\", \\"merge_method\\": \\"squash\\"}"
+                        """
+                    } else {
+                        echo "No PR number found; skipping API merge. Doing manual git merge..."
+
+                        bat '''
+                        git config user.name "jenkins"
+                        git config user.email "jenkins@yourdomain.com"
+                        git checkout main
+                        git pull origin main
+                        git merge origin/%BRANCH_NAME%
+                        git push origin main
+                        '''
+                    }
+                }
             }
         }
     }
