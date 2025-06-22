@@ -54,5 +54,5 @@ public class US_013 {
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/instructors");
     }
 
-    //deneme
+
 }
