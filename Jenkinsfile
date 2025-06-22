@@ -1,9 +1,8 @@
-//Jenkins File
 pipeline {
     agent any
 
     environment {
-        BRANCH_NAME = "${env.GIT_BRANCH.replaceFirst('origin/', '')}"
+        BRANCH_NAME = "${env.GIT_BRANCH?.replaceFirst('origin/', '')}"
     }
 
     stages {
@@ -13,7 +12,19 @@ pipeline {
             }
         }
 
+        stage('Check PR') {
+            when {
+                expression { env.CHANGE_ID == null }
+            }
+            steps {
+                error("No Pull Request detected, stopping pipeline.")
+            }
+        }
+
         stage('Build') {
+            when {
+                expression { env.CHANGE_ID != null }
+            }
             steps {
                 bat 'mvn clean install'
             }
@@ -28,9 +39,9 @@ pipeline {
 
                             bat """
                             curl -X PATCH -H "Authorization: token ${token}" ^
-                            -H "Accept: application/vnd.github+json" ^
-                            https://api.github.com/repos/${repo}/pulls/${prNumber} ^
-                            -d "{\\"state\\":\\"closed\\"}"
+                                 -H "Accept: application/vnd.github+json" ^
+                                 https://api.github.com/repos/${repo}/pulls/${prNumber} ^
+                                 -d "{\\"state\\":\\"closed\\"}"
                             """
                         }
                     }
@@ -40,7 +51,10 @@ pipeline {
 
         stage('Merge to main') {
             when {
-                branch 'main'
+                allOf {
+                    branch 'main'
+                    expression { env.CHANGE_ID != null }
+                }
             }
             steps {
                 echo 'Already on main, no merge needed.'
@@ -49,7 +63,10 @@ pipeline {
 
         stage('Auto Merge to main if not main') {
             when {
-                expression { env.BRANCH_NAME != 'main' }
+                allOf {
+                    expression { env.BRANCH_NAME != 'main' }
+                    expression { env.CHANGE_ID != null }
+                }
             }
             steps {
                 script {
@@ -57,27 +74,14 @@ pipeline {
                     def repo = 'Instulearn/UI'
                     def token = credentials('github-token')
 
-                    if (prNumber) {
-                        echo "Merging PR #${prNumber} via GitHub API..."
+                    echo "Merging PR #${prNumber} via GitHub API..."
 
-                        bat """
-                        curl -X PUT -H "Authorization: token ${token}" ^
-                             -H "Accept: application/vnd.github+json" ^
-                             https://api.github.com/repos/${repo}/pulls/${prNumber}/merge ^
-                             -d "{\\"commit_title\\": \\"Auto-merged by Jenkins\\", \\"merge_method\\": \\"squash\\"}"
-                        """
-                    } else {
-                        echo "No PR number found; skipping API merge. Doing manual git merge..."
-
-                        bat '''
-                        git config user.name "jenkins"
-                        git config user.email "jenkins@yourdomain.com"
-                        git checkout main
-                        git pull origin main
-                        git merge origin/%BRANCH_NAME%
-                        git push origin main
-                        '''
-                    }
+                    bat """
+                    curl -X PUT -H "Authorization: token ${token}" ^
+                         -H "Accept: application/vnd.github+json" ^
+                         https://api.github.com/repos/${repo}/pulls/${prNumber}/merge ^
+                         -d "{\\"commit_title\\": \\"Auto-merged by Jenkins\\", \\"merge_method\\": \\"squash\\"}"
+                    """
                 }
             }
         }
