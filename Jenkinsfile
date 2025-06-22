@@ -12,15 +12,6 @@ pipeline {
             }
         }
 
-        stage('Check PR') {
-            when {
-                expression { env.CHANGE_ID == null }
-            }
-            steps {
-                error("No Pull Request detected, stopping pipeline.")
-            }
-        }
-
         stage('Build') {
             when {
                 expression { env.CHANGE_ID != null }
