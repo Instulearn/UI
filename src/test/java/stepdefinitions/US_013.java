@@ -52,5 +52,5 @@ public class US_013 {
         kart.click();
         ReusableMethods.bekle(2);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/instructors");
-    }sistemibozmadenemesi
+    }
 }
