@@ -17,7 +17,7 @@ public class BasePage {
 	// Constructor
 	public BasePage(WebDriver driver) {
 
-        // Timeout değerini config'den al
+        // Timeout değerini config'den alddd
 		String timeoutValue = ConfigReader.getProperty("timeout");
 		if (timeoutValue == null || timeoutValue.isEmpty()) {
 			throw new RuntimeException("Timeout value is not set or invalid in config.properties!");

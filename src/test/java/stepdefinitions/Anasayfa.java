@@ -28,9 +28,7 @@ public class Anasayfa {
     public void kullanici_login_olur(String email, String password) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(email, password);
-        System.out.println(email + "  " + password);
-
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(5);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/panel");
 
     }
