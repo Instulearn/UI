@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
+
 public class Busra extends BasePage {
 
 
@@ -35,10 +36,55 @@ public class Busra extends BasePage {
     public WebElement allOrganizationsButton;
 
 
-    // 15. us gelcek buraya
+    // 15.3
+
+    @FindBy(xpath = "//h3[text()='irfan ulus']")
+    public WebElement profileName;
 
 
- // US 28.1
+    @FindBy(xpath = "//h1[text()='irfan ulus']")
+    public WebElement userName;
+
+
+    @FindBy(xpath = "//h3[text()='Light Moon']")
+    public WebElement organizationTitle;
+
+    @FindBy(xpath = "//h1[text()='Light Moon']")
+    public WebElement userName;
+
+    @FindBy(xpath = "//h3[text()='Kaan Oz']")
+    public WebElement kaanOzCardTitle;
+
+    @FindBy(xpath = "//h1[text()='Kaan Oz']")
+    public WebElement profileUserName;
+
+    @FindBy(xpath = "//h3[@class='home-organizations-title' and text()='alice']")
+    public WebElement aliceOrganizationTitle;
+
+    @FindBy(xpath = "//h1[text()='alice']")
+    public WebElement userName;
+
+    @FindBy(xpath = "//a[@href='/users/1257/profile']")
+    public WebElement aliceCardLink;
+
+    @FindBy(xpath = "//a[@href='/users/1352/profile']")
+    public WebElement sumeyraCardLink;
+
+    @FindBy(xpath = "//h1[text()='Sümeyra istengir']")
+    public WebElement userName;
+
+    @FindBy(css = "span.swiper-pagination-bullet.swiper-pagination-bullet-active")
+    public WebElement activeSliderBullet;
+
+    @FindBy(xpath = "//span[contains(@class,'swiper-pagination-bullet-active') and @aria-label='Go to slide 2']")
+    public WebElement activeSlide2Bullet;
+
+    @FindBy(xpath = "//span[contains(@class,'swiper-pagination-bullet-active') and @aria-label='Go to slide 3']")
+    public WebElement activeSlide3Bullet;
+
+
+
+    // US 28.1
 
     @FindBy(xpath = "//a[@href='/panel/support/new' and text()='New']")
     public WebElement newSupportLink;
@@ -75,6 +121,52 @@ public class Busra extends BasePage {
 
     @FindBy(xpath = "//h2[text()='No notifications.']")
     public WebElement noNotificationsMessage;
+
+
+//37.2
+
+    @FindBy(xpath = "//h2[text()='Notifications']")
+    public WebElement notificationsSectionTitle;
+
+//37.3
+
+    @FindBy(xpath = "//h2[text()='No notifications.']")
+    public WebElement noNotificationsText;
+
+//37.4
+
+
+
+
+
+
+// 37.5
+
+    @FindBy(xpath = "//span[text()='Mark all notifications as read']")
+    public WebElement markAllAsReadButton;
+
+//38.1
+
+    @FindBy(xpath = "//span[text()='Log out']")
+    public WebElement logoutButton;
+
+ //38.2
+
+    @FindBy(xpath = "//a[@href='/login' and text()='Login']")
+    public WebElement loginLink;
+
+
+
+
+
+//38.3
+
+    @FindBy(xpath = "//a[@href='/logout' and span[text()='Logout']]")
+    public WebElement logoutLink;
+
+//38.4
+
+
 
 
 
