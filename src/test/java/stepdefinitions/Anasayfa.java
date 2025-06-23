@@ -18,13 +18,13 @@ public class Anasayfa {
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/");
     }
 
-    @Given("kullanici login sayfasina gider")
+    @Given("Kullanici login sayfasina gider")
     public void kullanici_login_sayfasina_gider() {
         driver.get(ConfigReader.getProperty("loginUrl"));
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/login");
     }
 
-    @Given("kullanici {string} ve {string} ile login olur")
+    @Given("Kullanici {string} ve {string} ile login olur")
     public void kullanici_login_olur(String email, String password) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(email, password);
