@@ -1,0 +1,22 @@
+2025-06-23 01:49:42 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\alpay\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+2025-06-23 01:49:42 [main] INFO  runners.TestRunner - Cucumber Test Runner başlatılıyor...
+2025-06-23 01:49:42 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-23 01:49:43 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-23 01:49:43 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-23 01:49:44 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-23 01:49:53 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
+2025-06-23 01:49:53 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-23 01:49:53 [main] INFO  utils.LoggerHelper - Test Başlıyor: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-23 01:49:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-23 01:49:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-23 01:49:54 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-23 01:50:04 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: TC_13.2 Anasayfada Reserve a meeting karti islevsellik Testi
+2025-06-23 01:50:04 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
+2025-06-23 01:50:42 [main] INFO  utils.LoggerHelper - Test Başlıyor: Login Olma Testi
+2025-06-23 01:50:42 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 137.0.7151.119 (resolved driver for Chrome 137)
+2025-06-23 01:50:42 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\alpay\.cache\selenium\chromedriver\win64\137.0.7151.119\chromedriver.exe
+2025-06-23 01:50:43 [main] INFO  utils.LoggerHelper - Driver başlatıldı
+2025-06-23 01:50:51 [main] INFO  utils.LoggerHelper - Test başarıyla tamamlandı: Login Olma Testi
+2025-06-23 01:50:51 [main] INFO  utils.LoggerHelper - Driver kapatıldı.
