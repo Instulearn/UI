@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_TOKEN = credentials('github-full-token')
         BRANCH_NAME = "${env.BRANCH_NAME ?: env.CHANGE_BRANCH ?: 'unknown'}"
     }
 
@@ -28,12 +27,14 @@ pipeline {
                             echo "Build failed on PR #${prNumber}, closing PR..."
                             def repo = 'Instulearn/UI'
 
-                            bat """
-                            curl -X PATCH -H "Authorization: token ${GITHUB_TOKEN}" ^
-                                 -H "Accept: application/vnd.github+json" ^
-                                 https://api.github.com/repos/${repo}/pulls/${prNumber} ^
-                                 -d "{\\"state\\":\\"closed\\"}"
-                            """
+                            withCredentials([string(credentialsId: 'github-full-token', variable: 'GITHUB_TOKEN')]) {
+                                bat """
+                                curl -X PATCH -H "Authorization: token %GITHUB_TOKEN%" ^
+                                     -H "Accept: application/vnd.github+json" ^
+                                     https://api.github.com/repos/${repo}/pulls/${prNumber} ^
+                                     -d "{\\"state\\":\\"closed\\"}"
+                                """
+                            }
                         }
                     }
                 }
@@ -54,12 +55,14 @@ pipeline {
 
                     echo "Merging PR #${prNumber} via GitHub API..."
 
-                    bat """
-                    curl -X PUT -H "Authorization: token ${GITHUB_TOKEN}" ^
-                         -H "Accept: application/vnd.github+json" ^
-                         https://api.github.com/repos/${repo}/pulls/${prNumber}/merge ^
-                         -d "{\\"commit_title\\": \\"Auto-merged by Jenkins\\", \\"merge_method\\": \\"squash\\"}"
-                    """
+                    withCredentials([string(credentialsId: 'github-full-token', variable: 'GITHUB_TOKEN')]) {
+                        bat """
+                        curl -X PUT -H "Authorization: token %GITHUB_TOKEN%" ^
+                             -H "Accept: application/vnd.github+json" ^
+                             https://api.github.com/repos/${repo}/pulls/${prNumber}/merge ^
+                             -d "{\\"commit_title\\": \\"Auto-merged by Jenkins\\", \\"merge_method\\": \\"squash\\"}"
+                        """
+                    }
                 }
             }
         }
