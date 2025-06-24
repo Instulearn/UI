@@ -58,8 +58,6 @@ public class FurkanPage {
 
 
 
-
-    
     // Yeni seçenek eklemek için eğer varsa buton
     @FindBy(xpath = "//button[contains(text(),'Add option') or contains(text(),'Add choice')]")
     public WebElement addOptionButton;
