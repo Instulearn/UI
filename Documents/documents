@@ -1,1 +1,10 @@
 // Proje Dokumanlari eklenir.
+
+// Excel dosyasi olarak Faker user olusturur //
+ReusableMethods.writeSingleFakeUser("src/test/resources/isminizTestData.xlsx");
+
+// Excel dosyasindan Faker user okuma //
+ User user = ReusableMethods.readSingleFakeUser("src/test/resources/isminizTestData.xlsx");
+       String email = user.getEmail();
+       String password = user.getPassword();
+
