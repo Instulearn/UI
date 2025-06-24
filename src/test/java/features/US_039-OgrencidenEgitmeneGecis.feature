@@ -38,4 +38,12 @@
       And login butonuna basar ve ‘Student Panel' "https://qa.instulearn.com/panel" sayfasına yönlendirilir
       Then kullanıcı header bölümündeki ‘Home’ butonuna tıklar. url ' e gider.
       And ‘Become instructor’  butonunun olduğunu test eder
+      Then ‘Become instructor’  butonuna tıklar ve "https://qa.instulearn.com/become-instructor" adresine yönlendirilir
+      And açılan sayfada "Occupations" başlığını görür ve meslek olarak 'Math’i seçer
+      Then "Account Type" select menü'den instructor'ı seçer
+      And ‘Payout account’ select menüden ‘Stripe’ seçer
+      Then Açılan bölümde "Account Holder" kısmına "John Doe" , "Account ID" kısmına "4242" bilgilerini girer
+      And Identity Scan bölümüne kimliği yükler
+      Then Send a request butonuna basar
+      Then Açılan sayfada "create a course" butonunu görür ve başarılı kayıt yapığı teyit eder
       And  header bölümündeki profil ismine tıklar, açılan menüde logout'a tıklar
