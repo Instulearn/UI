@@ -56,6 +56,8 @@ public class FurkanPage {
     @FindBy(xpath = "//input[contains(@class,'js-question-option') or contains(@name,'option')]")
     public List<WebElement> questionOptionsInputs;
 
+
+
     // Yeni seçenek eklemek için eğer varsa buton
     @FindBy(xpath = "//button[contains(text(),'Add option') or contains(text(),'Add choice')]")
     public WebElement addOptionButton;
@@ -67,7 +69,7 @@ public class FurkanPage {
 
 
 
-    
+
     @FindBy(xpath = "//button[@id='add_descriptive_question']")
     public WebElement addDescriptiveButton;
 
