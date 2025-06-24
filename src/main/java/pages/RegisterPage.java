@@ -1,17 +1,12 @@
 package pages;
 
-import config.ConfigReader;
 import lombok.Getter;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.CreateTestDataExcel;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.LoggerHelper;
 
 import java.util.List;
 
@@ -82,36 +77,40 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//div[@class='wizard-custom-radio-item flex-grow-1']")
     private List<WebElement> accountType; // studentButton - instructorButton - organizationButton
 
-//******************************************* MY OBJECTS AND VARIABLES *********************************************
+//******************************************* MY OBJECTS AND VARIABLES **************************************
+    BasePage basePage= new BasePage(driver);
 
-    Workbook workbook = new XSSFWorkbook();
-    Logger logger = LogManager.getLogger(RegisterPage.class);
-    ConfigReader configReader = new ConfigReader();
-    CreateTestDataExcel dataExcel = new CreateTestDataExcel();
+//************************************************METHODS****************************************************
 
-    Sheet sheet3 = workbook.createSheet("Sheet3");
-    Object[][] registerData = {
-            {"E-Mail", "Full Name", "Password", "Retype Password"},
-            {"tugba@tugba.com", "Tugba", "abc.12345", "abc.12345"}
-    };
-
-    //***************************************** MY METHODS ******************************************************
-
-
-    public void registerFormDoldur(String email, String full_name, String password1, String retypePassword1 ){
-        click(registerButton);
-        type(emailBox,email);
-        type(fullName, full_name);
-        type(password, password1);
-        type(retypePassword, retypePassword1);
-
-
+    public void RegisterForm(){
+        LoggerHelper.info("Email bilgisi giriliyor");
+        basePage.type(emailBox,"tugba00@tugba.com");
+        LoggerHelper.info("Fullname bilgisi giriliyor");
+        basePage.type(fullName, "Tugba");
+        LoggerHelper.info("Password bilgisi giriliyor");
+        basePage.type(password, "abc.12345");
+        LoggerHelper.info("Retype Password bilgisi giriliyor");
+        basePage.type(retypePassword, "abc.12345");
     }
 
+    public boolean isWebElementDisplayed(WebElement element) {
+        try {
+            return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
+        } catch (Exception e) {
+            LoggerHelper.error("Web element bulunamadi veya hata alindi: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
 
-
-
-
+    public String getElementText(WebElement element) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+            return element.getText().trim();
+        } catch (Exception e) {
+            LoggerHelper.error("Web element bulunamadi veya hata alindi: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
 
 }
 

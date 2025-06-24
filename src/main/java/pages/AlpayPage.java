@@ -21,6 +21,37 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[@class='col-6'][2]")
     public WebElement reserveAMeetingCard;
 
+    @FindBy(xpath ="//*[contains(text(), 'Testimonials')]")
+    public WebElement testimonialsText;
+
+    @FindBy(xpath ="(//*[contains(@class, 'testimonials')])[3]")
+    public WebElement testimonialsSlider;
+
+    @FindBy(xpath ="(//*[contains(@class, 'testimonials-card')])[3]")
+    public WebElement testimonialsCard;
+
+    @FindBy(xpath ="(//*[contains(@class, 'swiper-wrapper')])[12]")
+    public WebElement testimonialWrapper;
+
+    @FindBy(xpath ="(//*[@aria-label='Go to slide 1'])[12]")
+    public WebElement testimonialBullet1;
+
+    @FindBy(xpath ="(//*[@aria-label='Go to slide 2'])[8]")
+    public WebElement testimonialBullet2;
+
+    @FindBy(xpath ="(//*[@aria-label='Go to slide 3'])[7]")
+    public WebElement testimonialBullet3;
+
+    @FindBy(xpath ="(//*[contains(text(), 'Data Analyst at Microsoft')])[3]")
+    public WebElement testimonialSirketAdi;
+
+    @FindBy(xpath ="(//*[contains(@class, 'stars-card d-flex align-items-center  mt-15')])[42]")
+    public WebElement testimonialStar;
+
+    @FindBy(xpath ="(//*[@class = 'mt-25 text-gray font-14'])[3]")
+    public WebElement testimonialYorum;
+
+
 
 
 
