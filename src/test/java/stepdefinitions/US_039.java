@@ -170,5 +170,9 @@ public class US_039 {
 
 
     }
+
+    @Then("{string} select menü{string}ı seçer")
+    public void selectMenüDenInstructorISeçer(String arg0) {
+    }
 }
 
