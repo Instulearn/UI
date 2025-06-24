@@ -116,6 +116,18 @@ public class US_017 {
         Assert.assertTrue(currentUrl.contains("login"));
     }
 
+    @Then("Footer'da mail bilgisi görünür olmalıdır")
+    public void footer_da_mail_bilgisi_görünür_olmalıdır() {
+        Assert.assertTrue(cananPage.footerEmail.isDisplayed());
+
+    }
+    @Then("Footer'da telefon bilgisi görünür olmalıdır")
+    public void footer_da_telefon_bilgisi_görünür_olmalıdır() {
+        Assert.assertTrue(cananPage.footerTelefon.isDisplayed());
+
+    }
+
+
 
 
 
