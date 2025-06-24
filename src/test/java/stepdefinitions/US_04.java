@@ -27,6 +27,7 @@ public class US_04 {
     public void register_butona_tiklanir() {
 
         basePage.click(registerPage.getRegisterButton());
+        registerPage.getRegisterButton().click();
     }
 
     @When("Formdaki bütün bilgiler gecerli verilerle doldurulur")

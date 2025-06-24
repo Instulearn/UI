@@ -9,6 +9,8 @@ import org.testng.Assert;
 import pages.AlpayPage;
 import utils.JSUtilities;
 import utils.ReusableMethods;
+import java.util.Arrays;
+import java.util.List;
 
 public class US_014 {
 
@@ -47,36 +49,48 @@ public class US_014 {
         }
 
         try {
-            WebElement testimonialBullet1 = new AlpayPage(driver).testimonialBullet1;
-            WebElement testimonialBullet2 = new AlpayPage(driver).testimonialBullet2;
-            JSUtilities.clickWithJS(driver, testimonialBullet1);
-            JSUtilities.clickWithJS(driver, testimonialBullet2);
+            List<WebElement> testimonialBullets = Arrays.asList(
+                    new AlpayPage(driver).testimonialBullet3,
+                    new AlpayPage(driver).testimonialBullet2,
+                    new AlpayPage(driver).testimonialBullet1
+            );
+
+            for (WebElement bullet : testimonialBullets) {
+                JSUtilities.clickWithJS(driver, bullet);
+                Thread.sleep(2000);
+            }
         } catch (Exception e) {
             throw new AssertionError("Failed to click on a testimonial bullet", e);
         }
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
 
     }
     @Given("İlk gorunen yorum karti incelenir ve kartin uzerinde sirket adinin yer alip almadigi kontrol edilir")
     public void i̇lk_gorunen_yorum_karti_incelenir_ve_kartin_uzerinde_sirket_adinin_yer_alip_almadigi_kontrol_edilir() {
         WebElement testimonialSirketadi = new AlpayPage(driver).testimonialSirketAdi;
 
-        Assert.assertEquals(testimonialSirketadi.getText(), "Data Analyst at Microsoft");
-
         if (!testimonialSirketadi.isDisplayed()) {
             throw new AssertionError("Testimonials Sirket Adi görünür değil: ");
         }
+        Assert.assertEquals(testimonialSirketadi.getText(), "Data Analyst at Microsoft");
+        ReusableMethods.bekle(2);
 
     }
     @Given("Puanlama gorselinin bulunup bulunmadigi kontrol edilir")
     public void puanlama_gorselinin_bulunup_bulunmadigi_kontrol_edilir() {
+        WebElement testimonialStar = new AlpayPage(driver).testimonialStar;
 
-
+        if (!testimonialStar.isDisplayed()) {
+            throw new AssertionError("Testimonials Stars görünür değil: ");
+        }
     }
     @Given("Kartin yorum metnini icerip icermedigi kontrol edilir")
     public void kartin_yorum_metnini_icerip_icermedigi_kontrol_edilir() {
+        WebElement testimonialYorum = new AlpayPage(driver).testimonialYorum;
 
-
+        if (!testimonialYorum.isDisplayed()) {
+            throw new AssertionError("Testimonials Yorum görünür değil: ");
+        }
     }
 
 }
