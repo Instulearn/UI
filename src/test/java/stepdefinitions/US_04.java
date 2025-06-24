@@ -25,6 +25,7 @@ public class US_04 {
     public void register_butona_tiklanir() {
         LoggerHelper.info("Register butonuna click yapiliyor");
         basePage.click(registerPage.getRegisterButton());
+        registerPage.getRegisterButton().click();
     }
 
     @When("Register formundaki bütün bilgiler gecerli verilerle doldurulur")

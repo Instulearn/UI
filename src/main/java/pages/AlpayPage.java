@@ -30,13 +30,19 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="(//*[contains(@class, 'testimonials-card')])[3]")
     public WebElement testimonialsCard;
 
-    @FindBy(xpath ="(//*[@class = 'swiper-pagination-bullet'])[19]")
+    @FindBy(xpath ="(//*[contains(@class, 'swiper-wrapper')])[12]")
+    public WebElement testimonialWrapper;
+
+    @FindBy(xpath ="(//*[@aria-label='Go to slide 1'])[12]")
     public WebElement testimonialBullet1;
 
-    @FindBy(xpath ="(//*[@class = 'swiper-pagination-bullet'])[20]")
+    @FindBy(xpath ="(//*[@aria-label='Go to slide 2'])[8]")
     public WebElement testimonialBullet2;
 
-    @FindBy(xpath ="(//*[@class = 'd-block font-14 text-gray'])[1]")
+    @FindBy(xpath ="(//*[@aria-label='Go to slide 3'])[7]")
+    public WebElement testimonialBullet3;
+
+    @FindBy(xpath ="(//*[contains(text(), 'Data Analyst at Microsoft')])[3]")
     public WebElement testimonialSirketAdi;
 
     @FindBy(xpath ="(//*[contains(@class, 'stars-card d-flex align-items-center  mt-15')])[42]")
@@ -44,6 +50,9 @@ public class AlpayPage extends BasePage {
 
     @FindBy(xpath ="(//*[@class = 'mt-25 text-gray font-14'])[3]")
     public WebElement testimonialYorum;
+
+
+
 
 
 }
