@@ -60,6 +60,11 @@ public class FurkanPage {
     @FindBy(xpath = "//button[contains(text(),'Add option') or contains(text(),'Add choice')]")
     public WebElement addOptionButton;
 
+
+
+
+
+    
     @FindBy(xpath = "//button[@id='add_descriptive_question']")
     public WebElement addDescriptiveButton;
 
