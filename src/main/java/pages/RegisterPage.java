@@ -77,6 +77,7 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//div[@class='wizard-custom-radio-item flex-grow-1']")
     private List<WebElement> accountType; // studentButton - instructorButton - organizationButton
 
+
 //******************************************* MY OBJECTS AND VARIABLES **************************************
     BasePage basePage= new BasePage(driver);
 
