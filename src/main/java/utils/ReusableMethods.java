@@ -1,5 +1,6 @@
 package utils;
 
+import com.github.javafaker.Faker;
 import drivers.DriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.List;
 
 public class ReusableMethods {
 
@@ -78,4 +80,42 @@ public class ReusableMethods {
             throw new RuntimeException(e);
         }
     }
+
+    public static void writeSingleFakeUser(String filePath) {
+        Faker faker = new Faker();
+        ExcelReader excel = new ExcelReader(filePath);
+
+        // Header row
+        excel.writeCell("Users", 0, 0, "Email", filePath);
+        excel.writeCell("Users", 0, 1, "Password", filePath);
+
+        // Generate fake user info
+        String email = faker.internet().emailAddress();
+        String password = faker.internet().password(8, 16, true, true, true);
+
+        // Write to the second row
+        excel.writeCell("Users", 1, 0, email, filePath);
+        excel.writeCell("Users", 1, 1, password, filePath);
+
+        excel.close();
+        System.out.println("User written to: " + filePath);
+    }
+
+    public static User readSingleFakeUser(String filePath) {
+        ExcelReader excel = new ExcelReader(filePath);
+        List<List<String>> data = excel.readSheet("Users");
+
+        if (data.size() < 2 || data.get(1).size() < 2) {
+            throw new RuntimeException("User data not found or incomplete in Excel file.");
+        }
+
+        String email = data.get(1).get(0);
+        String password = data.get(1).get(1);
+
+        excel.close();
+        return new User(email, password);
+    }
+
+
+
 }
