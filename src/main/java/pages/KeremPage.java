@@ -1,6 +1,7 @@
 package pages;
 
 import lombok.extern.slf4j.Slf4j;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 public class KeremPage extends BasePage{
 
     LoginPage loginPage = new LoginPage(driver);
+
 
     // Constructor
     public KeremPage(WebDriver driver) {
@@ -53,5 +55,6 @@ public class KeremPage extends BasePage{
 
     @FindBy(xpath = "//*[@for='checkbox601']")
     public WebElement becomeInstructorPageMath;
+
 
 }

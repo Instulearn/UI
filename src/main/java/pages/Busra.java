@@ -49,8 +49,8 @@ public class Busra extends BasePage {
     @FindBy(xpath = "//h3[text()='Light Moon']")
     public WebElement organizationTitle;
 
-   // @FindBy(xpath = "//h1[text()='Light Moon']")
-    //public WebElement userName;
+   //@FindBy(xpath = "//h1[text()='Light Moon']")
+   // public WebElement userName;
 
     @FindBy(xpath = "//h3[text()='Kaan Oz']")
     public WebElement kaanOzCardTitle;
@@ -64,6 +64,7 @@ public class Busra extends BasePage {
     //@FindBy(xpath = "//h1[text()='alice']")
     //public WebElement userName;
 
+
     @FindBy(xpath = "//a[@href='/users/1257/profile']")
     public WebElement aliceCardLink;
 
@@ -72,6 +73,7 @@ public class Busra extends BasePage {
 
     //@FindBy(xpath = "//h1[text()='Sümeyra istengir']")
     //public WebElement userName;
+
 
     @FindBy(css = "span.swiper-pagination-bullet.swiper-pagination-bullet-active")
     public WebElement activeSliderBullet;

@@ -6,7 +6,8 @@ import java.util.Properties;
 
 public class UserConfigReader {
 	private static Properties properties;
-
+	//Kisisel verilerimizi surekli girmemek adina olusturulmustur
+	//detay hakkinda bilgi almak icin kerem / furkan
 	static {
 		try {
 			FileInputStream fis = new FileInputStream("src/main/resources/userconfig.properties");
