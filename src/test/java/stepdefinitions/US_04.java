@@ -8,7 +8,6 @@ import org.testng.asserts.SoftAssert;
 import pages.BasePage;
 import pages.RegisterPage;
 import utils.JSUtilities;
-
 public class US_04 {
 
     WebDriver driver = DriverManager.getDriver();
