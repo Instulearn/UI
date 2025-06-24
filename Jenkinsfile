@@ -26,7 +26,7 @@ pipeline {
                         if (prNumber) {
                             echo "Build failed on PR #${prNumber}, closing PR..."
                             def repo = 'Instulearn/UI'
-                            def token = credentials('github-token')
+                            def token = credentials('159')
 
                             bat """
                             curl -X PATCH -H "Authorization: token ${token}" ^
