@@ -2,6 +2,9 @@ Feature: Home Page Accessibility
 @filizhome
 
 
+
+
   Scenario: [TC_01.1] Ana sayfa erişilebilir olmalı ve başlık doğru olmalı
     Given Kullanıcı ana sayfaya gider
     Then Sayfa başlığı "Home | InstuLearn" olmalı
+
