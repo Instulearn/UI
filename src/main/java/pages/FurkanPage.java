@@ -69,6 +69,6 @@ public class FurkanPage {
     @FindBy(xpath = "//button[contains(text(),'Save') or contains(text(),'Add Question')]")
     public WebElement saveDescriptiveQuestionButton;
 
-    
+
 
 }
