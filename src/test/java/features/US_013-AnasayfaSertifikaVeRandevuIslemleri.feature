@@ -4,7 +4,6 @@ Feature: US_013 Anasayfada sertifika ve randevu işlemleri yönetilir
   @us13
   Scenario: TC_13.1 Anasayfada Validate Certificates karti gorunurluk Testi
     Given kullanici anasayfaya gider
-
     When "Validate Certificates" kartinin gorunur olup olmadigini kontrol eder.
     Then Validate Certificate kartina tiklar
 
