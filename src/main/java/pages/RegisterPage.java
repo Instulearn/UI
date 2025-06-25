@@ -110,6 +110,17 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//*[contains(text(),'The email must be a valid email address.')]")
     private WebElement invalidEmailMessage;
 
+    @Getter
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
+    private WebElement passCharacterMessage;
+
+    @Getter
+    @FindBy(xpath = "//a[@class='text-secondary font-weight-bold']")
+    private WebElement login;
+
+    @Getter
+    @FindBy(xpath = "//span[.='Logout']")
+    private WebElement logout;
 
 
 

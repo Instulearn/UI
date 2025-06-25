@@ -102,4 +102,92 @@ Feature: US_04 Register olma islemleri
        | fullName | password | retypePassword | errorMessage                                 |
        | Tugba    | abc.1    | abc.1          | The password must be at least 8 characters.  |
 
+  @TC_004.14
+  Scenario Outline: Kullanıcı 7 haneli password girdiginde dogru uyari mesaji gelmeli
+    Given Kullanici anasayfaya gider
+    When Register butona tiklanir
+    And Email alanina gecerli bir email girilir
+    And Full Name alani "<fullName>" gecerli verilerle doldurulur
+    And Password alani "<password>" ve Retype Password alani "<retypePassword>" olarak doldurulur
+    And I agree with terms&rules secilir
+    And Signup butonuna tiklanir
+    Then Password altinda "<message>" uyari mesajinin görüntülendigi dogrulanir
+
+    Examples:
+      | fullName | password | retypePassword | errorMessage                                 |
+      | Tugba    | abc.123    | abc.123      | The password must be at least 8 characters.  |
+
+  @TC_004.14
+  Scenario Outline: Kullanıcı 7 haneli password girdiginde dogru uyari mesaji gelmeli
+    Given Kullanici anasayfaya gider
+    When Register butona tiklanir
+    And Email alanina gecerli bir email girilir
+    And Full Name alani "<fullName>" gecerli verilerle doldurulur
+    And Password alani "<password>" ve Retype Password alani "<retypePassword>" olarak doldurulur
+    And I agree with terms&rules secilir
+    And Signup butonuna tiklanir
+    Then Password altinda "<message>" uyari mesajinin görüntülendigi dogrulanir
+
+    Examples:
+      | fullName | password | retypePassword | message                                 |
+      | Tugba    | abc.123    | abc.123      | The password must be at least 8 characters.  |
+
+  @TC_004.15
+  Scenario Outline: Kullanıcı 7 haneli password girdiginde dogru uyari mesaji gelmeli
+    Given Kullanici anasayfaya gider
+    When Register butona tiklanir
+    And Email alanina gecerli bir email girilir
+    And Full Name alani "<fullName>" gecerli verilerle doldurulur
+    And Password alani "<password>" ve Retype Password alani "<retypePassword>" olarak doldurulur
+    And I agree with terms&rules secilir
+    And Signup butonuna tiklanir
+    Then Password altinda "<message>" uyari mesajinin görüntülendigi dogrulanir
+
+    Examples:
+      | fullName | password    | retypePassword | message                          |
+      | Tugba    | 12345678    | 12345678       | The password format is invalid.  |
+
+
+  @TC_004.17
+  Scenario: Register page'den login page'e gitme testi
+    Given Kullanici anasayfaya gider
+    When Register butona tiklanir
+    And Formun altinda yer alan login yazisina tiklanir
+    Then Yönlendirilen sayfanin URL'inin 'login' icerdigi dogrulanir
+
+  @TC_004.18
+  Scenario Outline: Register page'den login page'e gitme testi
+    Given Kullanici anasayfaya gider
+    When  Register butona tiklanir
+    And Email alanina gecerli bir email girilir
+    And Full Name alani "<fullName>" gecerli verilerle doldurulur
+    And Password alani "<password>" ve Retype Password alani "<retypePassword>" olarak doldurulur
+    And I agree with terms&rules secilir
+    And Signup butonuna tiklanir
+    Then Password altinda "<message>" uyari mesajinin görüntülendigi dogrulanir
+
+    Examples:
+      | fullName | password    | retypePassword | message                          |
+      | Tugba    | abc.12345   | 12345.abc      | The password confirmation does not match.  |
+
+
+  @TC_004.19
+  Scenario: Ziyaretci register olma testi
+    Given Kullanici anasayfaya gider
+    When Register butona tiklanir
+    And Register formundaki bütün bilgiler gecerli verilerle doldurulur
+    And I agree with terms&rules secilir
+    When Signup butonuna tiklanir
+    And Yönlendirilen sayfada kayit olan kisinin isminin üstüne gelinir
+    And Logout yazisina tiklanir
+    And Register butona tiklanir
+    And Register formundaki mail haric bilgiler gecerli verilerle doldurulur
+    And emaile ayni mail tekrar girilir
+    And I agree with terms&rules secilir
+    When Signup butonuna tiklanir
+    Then Kullanicinin tekrar register olamadigi dogrulanir
+
+
+
+
 

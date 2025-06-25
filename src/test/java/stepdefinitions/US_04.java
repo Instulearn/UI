@@ -19,6 +19,7 @@ public class US_04 {
     WebDriver driver = DriverManager.getDriver();
     BasePage basePage = new BasePage(driver);
     RegisterPage registerPage = new RegisterPage(driver);
+    String email2="";
 
 
     @When("Register butona tiklanir")
@@ -33,6 +34,7 @@ public class US_04 {
         ReusableMethods.writeSingleFakeUser("src/test/resources/TugbaTestData.xlsx");
         User user = ReusableMethods.readSingleFakeUser("src/test/resources/TugbaTestData.xlsx");
         String email = user.getEmail();
+        email2=email;
 
         LoggerHelper.info("Email bilgisi giriliyor");
         Allure.step("Email bilgisi giriliyor");
@@ -180,9 +182,70 @@ public class US_04 {
         basePage.type(registerPage.getRetypePassword(), retypePassword);
     }
     @Then("Password altinda {string} uyari mesajinin görüntülendigi dogrulanir")
-    public void password_altinda_uyari_mesajinin_görüntülendigi_dogrulanir(String string) {
+    public void password_altinda_uyari_mesajinin_görüntülendigi_dogrulanir(String expectedMsg) {
+
+        String actualMsg = ReusableMethods.getElementText(registerPage.getPassCharacterMessage()).trim();
+        System.out.println("actualMsg = " + actualMsg);
+        Assert.assertEquals(actualMsg,expectedMsg);
 
 }
+
+    @When("Formun altinda yer alan login yazisina tiklanir")
+    public void formun_altinda_yer_alan_login_yazisina_tiklanir() {
+      basePage.click(registerPage.getLogin());
+
+    }
+
+    @Then("Yönlendirilen sayfanin URL'inin 'login' icerdigi dogrulanir")
+    public void yönlendirilen_sayfanin_url_inin_login_icerdigi_dogrulanir() {
+
+        String url = DriverManager.getDriver().getCurrentUrl();
+        Assert.assertTrue(url.contains("login"));
+
+    }
+
+    @When("Yönlendirilen sayfada kayit olan kisinin isminin üstüne gelinir")
+    public void yönlendirilen_sayfada_kayit_olan_kisinin_isminin_üstüne_gelinir() {
+
+        basePage.click(registerPage.getUserName());
+    }
+    @When("Logout yazisina tiklanir")
+    public void logout_yazisina_tiklanir() {
+        basePage.click(registerPage.getLogout());
+    }
+    @Then("Kullanicinin tekrar register olamadigi dogrulanir")
+    public void kullanicinin_tekrar_register_olamadigi_dogrulanir() {
+
+       String actualMessage = ReusableMethods.getElementText(registerPage.getErrormessages().get(0)).trim();
+       String extectedMessage = "The email has already been taken.";
+       Assert.assertEquals(actualMessage,extectedMessage);
+
+    }
+
+    @When("Register formundaki mail haric bilgiler gecerli verilerle doldurulur")
+    public void register_formundaki_mail_haric_bilgiler_gecerli_verilerle_doldurulur() {
+
+        LoggerHelper.info("Fullname bilgisi giriliyor");
+        Allure.step("Fullname bilgisi giriliyor");
+        basePage.type(registerPage.getFullName(), "Tugba");
+        LoggerHelper.info("Password bilgisi giriliyor");
+        Allure.step("Password bilgisi giriliyor");
+        basePage.type(registerPage.getPassword(), "abc.12345");
+        LoggerHelper.info("Retype Password bilgisi giriliyor");
+        Allure.step("Retype Password bilgisi giriliyor");
+        basePage.type(registerPage.getRetypePassword(), "abc.12345");
+
+
+    }
+    @When("emaile ayni mail tekrar girilir")
+    public void emaile_ayni_mail_tekrar_girilir() {
+        LoggerHelper.info("Email bilgisi giriliyor");
+        Allure.step("Email bilgisi giriliyor");
+        basePage.type(registerPage.getEmailBox(), email2);
+    }
+
+
+
 
 
 
