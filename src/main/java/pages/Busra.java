@@ -62,7 +62,7 @@ public class Busra extends BasePage {
     public WebElement aliceOrganizationTitle;
 
     @FindBy(xpath = "//h1[text()='alice']")
-    public WebElement userName;
+    public WebElement userName"";
 
     @FindBy(xpath = "//a[@href='/users/1257/profile']")
     public WebElement aliceCardLink;
