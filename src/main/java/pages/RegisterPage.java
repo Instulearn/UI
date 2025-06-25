@@ -15,8 +15,6 @@ import java.util.List;
 
 import static drivers.DriverManager.getDriver;
 
-// ******* SAYFA ILE ILGILI SORU / SORUN OLURSA MüRACAAT : Tugba
-
 public class RegisterPage extends BasePage {
 
     public RegisterPage(WebDriver driver) {
