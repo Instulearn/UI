@@ -12,7 +12,8 @@ import utils.ReusableMethods;
 
 public class US_013 {
 
-    WebDriver driver = DriverManager.getDriver(); // fetch current thread's driver
+    WebDriver driver = DriverManager.getDriver();
+    // fetch current thread's driver
 
     @When("{string} kartinin gorunur olup olmadigini kontrol eder.")
     public void kartinin_gorunur_olup_olmadigini_kontrol_eder(String validate) {
