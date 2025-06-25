@@ -2,7 +2,7 @@ Feature: US_014 Anasayfada Testimonials kisminin oldugu ve islevselligi test edi
 
   @us14
   Scenario: TC_14.1 Anasayfa body bolumunde Testimonials Slider Testi
-    * kullanici anasayfaya gider
+    * Kullanici anasayfaya gider
     * Sayfa asagi kaydirilarak Testimonials basligina ulasilir
     * Slider kontrol edilir
     * Slider ileri ve geri oklari ya da swipe fonksiyonu test edilerek kart gecisleri denenir

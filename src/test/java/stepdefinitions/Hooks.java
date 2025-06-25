@@ -1,10 +1,12 @@
 package stepdefinitions;
 
+import context.ScenarioContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import drivers.DriverManager;
+import org.testng.asserts.SoftAssert;
 import utils.LoggerHelper;
 import utils.ReusableMethods;
 
@@ -26,6 +28,18 @@ public class Hooks {
 
 		LoggerHelper.info("Driver başlatıldı");
 	}
+
+	@After
+	public void afterScenario() {
+		SoftAssert softAssert = ScenarioContext.softAssert.get();
+		try {
+			softAssert.assertAll();
+		} finally {
+			ScenarioContext.softAssert.remove(); // Clean up
+		}
+	}
+
+
 
 
 	@After
