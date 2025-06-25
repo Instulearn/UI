@@ -17,7 +17,7 @@ import org.testng.annotations.BeforeClass;
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" // Allure raporları için plugin
 		},
 		monochrome = true,                         // Konsol çıktısını daha okunabilir hale getirir
-		tags = "@us13",                           // Yalnızca belirtilen etiketli senaryolar çalıştırılır..
+		tags = "@google",                           // Yalnızca belirtilen etiketli senaryolar çalıştırılır..
 		dryRun = false								/* true yaparsanız sadece eksik stepleri
 													 	kontrol eder çalıştırmaz, false ise test çalışır */
 )
