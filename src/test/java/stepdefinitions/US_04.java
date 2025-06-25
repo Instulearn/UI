@@ -3,46 +3,65 @@ package stepdefinitions;
 import config.ConfigReader;
 import drivers.DriverManager;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.testng.asserts.SoftAssert;
+import org.testng.Assert;
 import pages.BasePage;
 import pages.RegisterPage;
 import utils.JSUtilities;
+
 public class US_04 {
 
     WebDriver driver = DriverManager.getDriver();
-    ConfigReader configReader = new ConfigReader();
     BasePage basePage = new BasePage(driver);
     RegisterPage registerPage = new RegisterPage(driver);
-    SoftAssert softAssert = new SoftAssert();
+    boolean isDisplayed = false;
 
 
-    @Given("Kullanici anasayfaya gider")
-    public void kullanici_anasayfaya_gider() {
-
-        driver.get(configReader.getProperty("url"));
-    }
     @When("Register butona tiklanir")
     public void register_butona_tiklanir() {
-
+        LoggerHelper.info("Register butonuna click yapiliyor");
         basePage.click(registerPage.getRegisterButton());
+        registerPage.getRegisterButton().click();
     }
 
-    @When("Formdaki bütün bilgiler gecerli verilerle doldurulur")
-    public void formdaki_bütün_bilgiler_gecerli_verilerle_doldurulur() {
-        registerPage.registerFormDoldur("tugba0@tugba.com","Tugba","abc.12345","abc.12345");
+    @When("Register formundaki bütün bilgiler gecerli verilerle doldurulur")
+    public void register_formundaki_bütün_bilgiler_gecerli_verilerle_doldurulur() {
+        registerPage.RegisterForm();
     }
+
     @Then("I agree with terms&rules secilir")
     public void i_agree_with_terms_rules_secilir() {
+        LoggerHelper.info("Terms and Rules onaylaniyor");
         JSUtilities.clickWithJS(driver,registerPage.getTermsRulesConfirm());
     }
     @Then("Signup butonuna tiklanir")
     public void signup_butonuna_tiklanir() {
+        LoggerHelper.info("signup butonuna tiklaniyor");
         basePage.click(registerPage.getSignupButton());
     }
+
     @Then("Yönlendirilen sayfada {string} yazilan ismin görüldügü dogrulanir")
     public void yönlendirilen_sayfada_yazilan_ismin_görüldügü_dogrulanir(String string) {
-        softAssert.assertTrue(registerPage.getUserName().isDisplayed());
+        Assert.assertTrue(registerPage.isWebElementDisplayed(registerPage.getUserName()));
     }
+
+    @Given("Register butonunun görünürlügü dogrulanir")
+    public void register_butonunun_görünürlügü_dogrulanir() {
+        LoggerHelper.info("Register butonunun görünürlügü dogrulaniyor");
+        Assert.assertTrue(registerPage.isWebElementDisplayed(registerPage.getRegisterButton()));
+    }
+
+    @Then("Register butonuna tiklandiginda acilan sayfanin URL'inde 'register' kelimesinin yer aldigi dogrulanir")
+    public void register_butonuna_tiklandiginda_acilan_sayfanin_url_inde_register_kelimesinin_yer_aldigi_dogrulanir() {
+         LoggerHelper.info("URL'in 'register' kelimesini icerdigi dogrulaniyor");
+         Assert.assertTrue(driver.getCurrentUrl().contains("register"),"URL register kelimesini icermiyor");
+    }
+
+    @Then("Sayfanin solunda yer alan resmin görünürlügü dogrulanir")
+    public void sayfanin_solunda_yer_alan_resmin_görünürlügü_dogrulanir() {
+        Assert.assertTrue(registerPage.isWebElementDisplayed(registerPage.getPhoto()));
+    }
+
 
 }

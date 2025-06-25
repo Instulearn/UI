@@ -14,11 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testng.version>7.11.0</testng.version>
         <cucumber.version>7.23.0</cucumber.version>
-        <allure.version>2.20.1</allure.version>
+        <allure.version>2.29.1</allure.version>
         <surefire.version>3.1.2</surefire.version>
         <selenium.version>4.33.0</selenium.version>
         <log4j.version>2.20.0</log4j.version>
-        <poi.version>5.2.3</poi.version>
+        <poi.version>5.4.1</poi.version>
     </properties>
 
     <dependencies>
@@ -46,6 +46,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
+            <scope>test</scope>
         </dependency>
 
 
@@ -53,7 +54,7 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber7-jvm</artifactId>
-            <version>2.24.0</version>
+            <version>2.29.1</version>
         </dependency>
 
         <!-- Log4j -->
@@ -77,14 +78,14 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.6.2</version>
+            <version>6.1.0</version>
         </dependency>
 
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
+            <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
 
@@ -102,7 +103,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
-            <version>4.4</version>
+            <version>4.5.0</version>
         </dependency>
 
         <dependency>
@@ -110,11 +111,12 @@
             <artifactId>gherkin</artifactId>
             <version>32.1.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.11.0</version>
-            <scope>test</scope>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
         </dependency>
 
 
@@ -127,6 +129,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
+                <executions>
+                    <execution>
+                        <id>run-tests</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <!-- Test Runner sınıfını çalıştır -->
                     <includes>
@@ -143,18 +154,33 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.14.0</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- Allure Maven Plugin -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.10.0</version>
+                <version>2.15.2</version>
             </plugin>
         </plugins>
     </build>

@@ -17,7 +17,9 @@ import org.testng.annotations.BeforeClass;
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" // Allure raporları için plugin
 		},
 		monochrome = true,                         // Konsol çıktısını daha okunabilir hale getirir
-		tags = "@google"                           // Yalnızca belirtilen etiketli senaryolar çalıştırılır.
+		tags = "@google",                           // Yalnızca belirtilen etiketli senaryolar çalıştırılır..
+		dryRun = false								/* true yaparsanız sadece eksik stepleri
+													 	kontrol eder çalıştırmaz, false ise test çalışır */
 )
 public class TestRunner extends AbstractTestNGCucumberTests{
 	private static final Logger logger = LogManager.getLogger(TestRunner.class);

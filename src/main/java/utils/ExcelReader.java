@@ -16,10 +16,15 @@ public class ExcelReader {
 	private Workbook workbook;
 
 	public ExcelReader(String filePath) {
-		try (FileInputStream fis = new FileInputStream(new File(filePath))) {
-			workbook = new XSSFWorkbook(fis); // .xlsx dosyaları için
-		} catch (IOException e) {
-			throw new RuntimeException("Excel dosyası okunurken hata oluştu: " + e.getMessage());
+		File file = new File(filePath);
+		if (file.exists()) {
+			try (FileInputStream fis = new FileInputStream(file)) {
+				workbook = new XSSFWorkbook(fis);
+			} catch (IOException e) {
+				throw new RuntimeException("Failed to read Excel file: " + e.getMessage());
+			}
+		} else {
+			workbook = new XSSFWorkbook(); // create new workbook if file doesn't exist
 		}
 	}
 
