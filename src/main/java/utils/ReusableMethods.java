@@ -61,9 +61,9 @@ public class ReusableMethods {
 
     }
 
-    public String getElementText(WebElement element) {
+    public static String getElementText(WebElement element) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOf(element));
             return element.getText().trim();
         } catch (Exception e) {

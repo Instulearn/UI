@@ -6,9 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.LoggerHelper;
+import utils.ReusableMethods;
 
+import java.time.Duration;
 import java.util.List;
+
+import static drivers.DriverManager.getDriver;
 
 // ******* SAYFA ILE ILGILI SORU / SORUN OLURSA MüRACAAT : Tugba
 
@@ -77,6 +82,36 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//div[@class='wizard-custom-radio-item flex-grow-1']")
     private List<WebElement> accountType; // studentButton - instructorButton - organizationButton
 
+    @Getter
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    private WebElement emailmessage;
+
+    @Getter
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    private WebElement fullnamemessage;
+
+    @Getter
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
+    private WebElement passwordmessage;
+
+    @Getter
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
+    private WebElement retypemessage;
+
+    @Getter
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
+    private List<WebElement> errormessages;
+
+    @Getter
+    @FindBy(xpath = "//div[@class='custom-control custom-checkbox']//*[contains(text(),'The term field is required.')]")
+    private WebElement termAndRulesMessage;
+
+    @Getter
+    @FindBy(xpath = "//*[contains(text(),'The email must be a valid email address.')]")
+    private WebElement invalidEmailMessage;
+
+
+
 
 //******************************************* MY OBJECTS AND VARIABLES **************************************
     BasePage basePage= new BasePage(driver);
@@ -110,6 +145,20 @@ public class RegisterPage extends BasePage {
         } catch (Exception e) {
             LoggerHelper.error("Web element bulunamadi veya hata alindi: " + e.getMessage());
             throw new RuntimeException(e);
+        }
+    }
+
+    public static WebElement waitForClickability(WebElement element, int timeoutSeconds) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutSeconds));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static boolean waitForClickability(WebElement element) {
+        try {
+            waitForClickability(element, 10);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
