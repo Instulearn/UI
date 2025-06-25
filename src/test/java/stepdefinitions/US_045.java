@@ -29,7 +29,7 @@ public class US_045 {
         financialBaslik.click();
         softAssert().assertTrue(financialSummary.isDisplayed());
 
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
     }
     @Given("Financial Summary baglantisina tiklanir ve ilgili sayfanin yuklendigi kontrol edilir")
     public void financial_summary_baglantisina_tiklanir() {
@@ -39,7 +39,7 @@ public class US_045 {
         financialSummary.click();
         softAssert().assertTrue(financialDocuments.isDisplayed());
 
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
 
     }
     @Given("Payout baglantisina tiklanir ve henuz tanimli bir hesap yoksa davranis kontrol edilir")
@@ -52,7 +52,7 @@ public class US_045 {
         softAssert().assertTrue(accountSummary.isDisplayed());
         softAssert().assertTrue(yourIdentity.isDisplayed());
 
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(10);
 
 
     }
@@ -70,7 +70,7 @@ public class US_045 {
         WebElement requestDone = new AlpayPage(driver).requestDone;
 
         settings.click();
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(3);
         Select select = new Select(selectAccountType);
         select.selectByVisibleText("Paypal");
         ReusableMethods.bekle(2);
@@ -90,27 +90,69 @@ public class US_045 {
         addressField.sendKeys("Greenwich, London, UK");
         ReusableMethods.bekle(2);
         saveButton.click();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
 
         assertTrue(requestDone.isDisplayed());
-
-
-
-
+        softAssert().assertTrue(false, "Tanimli esap olusmadi");
 
     }
 
     @Given("Tanimli hesap silinir")
     public void tanimli_hesap_silinir() {
-        assertTrue(false, "Tanimli Hesap Bulunmamaktadir");
+        softAssert().assertTrue(false, "Tanimli Hesap Bulunmamaktadir");
     }
+
     @Given("Charge Account baglantisina tiklanir")
     public void charge_account_baglantisina_tiklanir() {
-
+        WebElement chargeAccount = new AlpayPage(driver).chargeAccount;
+        WebElement financialBaslik = new AlpayPage(driver).financialBaslik;
+        financialBaslik.click();
+        ReusableMethods.bekle(3);
+        chargeAccount.click();
+        softAssert().assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/panel/financial/account");
+        ReusableMethods.bekle(3);
     }
+
     @Given("Odeme yontemi ve tutar girilerek islem tamamlanir")
     public void odeme_yontemi_ve_tutar_girilerek_islem_tamamlanir() {
 
+        WebElement stripeButton = new AlpayPage(driver).stripeButton;
+        WebElement amount = new AlpayPage(driver).amount;
+        WebElement payButton = new AlpayPage(driver).payButton;
+        WebElement emailStripe = new AlpayPage(driver).emailStripe;
+        WebElement cardNumber = new AlpayPage(driver).cardNumber;
+        WebElement cardExpiry = new AlpayPage(driver).cardExpiry;
+        WebElement cardCvc = new AlpayPage(driver).cardCvc;
+        WebElement billingName = new AlpayPage(driver).billingName;
+        WebElement billingCountry = new AlpayPage(driver).billingCountry;
+        WebElement submitButton = new AlpayPage(driver).submitButton;
+
+        stripeButton.click();
+        ReusableMethods.bekle(3);
+        amount.sendKeys("10000");
+        payButton.click();
+        ReusableMethods.bekle(3);
+
+        assertTrue(emailStripe.isDisplayed());
+
+        emailStripe.sendKeys("test.student@instulearn.com");
+        ReusableMethods.bekle(2);
+        cardNumber.sendKeys("4242424242424242");
+        ReusableMethods.bekle(2);
+        cardExpiry.sendKeys("12");
+        cardExpiry.sendKeys("40");
+        ReusableMethods.bekle(2);
+        cardCvc.sendKeys("242");
+        ReusableMethods.bekle(2);
+        billingName.sendKeys("Tester Name");
+        ReusableMethods.bekle(2);
+        Select select = new Select(billingCountry);
+        select.selectByVisibleText("Turkey");
+        ReusableMethods.bekle(2);
+        submitButton.click();
+        ReusableMethods.bekle(4);
+        assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/payments/status");
+        ReusableMethods.bekle(4);
     }
     @Given("Subscribe baglantisina tiklanir")
     public void subscribe_baglantisina_tiklanir() {
