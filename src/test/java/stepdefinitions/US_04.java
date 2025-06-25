@@ -182,17 +182,11 @@ public class US_04 {
     @Then("Password altinda {string} uyari mesajinin görüntülendigi dogrulanir")
     public void password_altinda_uyari_mesajinin_görüntülendigi_dogrulanir(String string) {
 
-
-
-
-
-
-
-
-
+}
 
 
 
 }
+
 
 
