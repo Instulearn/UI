@@ -28,6 +28,9 @@ WebDriver driver = DriverManager.getDriver();
 
 
 
+
+
+
         Assert.assertTrue(baslikElementi.isDisplayed(), "Beklenen başlık görünür değil: " + beklenenBaslik);
     }
 
