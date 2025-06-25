@@ -20,7 +20,7 @@ public class US_001  {
         driver.get("https://qa.instulearn.com");
 
     }
-    @Then("Sayfa başlığı {ınstalearn} olmalı")
+    @Then("Sayfa başlığı {String} olmalı")
     public void sayfa_başlığı_ınstalearn_olmalı(String expectedTitle) {
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle, "Sayfa başlığı beklenenden farklı!");
