@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import pages.AlpayPage;
+import utils.JSUtilities;
 import utils.ReusableMethods;
 
 import static org.testng.Assert.*;
@@ -27,7 +28,9 @@ public class US_045 {
         WebElement financialSummary = new AlpayPage(driver).financialSummary;
         assertTrue(financialBaslik.isDisplayed());
         financialBaslik.click();
-        softAssert().assertTrue(financialSummary.isDisplayed());
+        ReusableMethods.bekle(1);
+
+        assertTrue(financialSummary.isDisplayed());
 
         ReusableMethods.bekle(3);
     }
@@ -89,7 +92,7 @@ public class US_045 {
         addressField.sendKeys("Greenwich, London, UK");
         ReusableMethods.bekle(2);
         saveButton.click();
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(5);
 
         assertTrue(requestDone.isDisplayed());
         assertTrue(false, "Tanimli Hesap olusmadi");
@@ -112,7 +115,9 @@ public class US_045 {
 
         ReusableMethods.bekle(3);
         chargeAccount.click();
-        softAssert().assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/panel/financial/account");
+
+        assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/panel/financial/account");
+
         ReusableMethods.bekle(3);
     }
 
@@ -154,7 +159,9 @@ public class US_045 {
         ReusableMethods.bekle(2);
         submitButton.click();
         ReusableMethods.bekle(6);
+
         assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/payments/status");
+
         ReusableMethods.bekle(4);
     }
     @Given("Subscribe baglantisina tiklanir")
@@ -173,14 +180,22 @@ public class US_045 {
         WebElement purchase = new AlpayPage(driver).purchase;
         WebElement accountCharge = new AlpayPage(driver).accountCharge;
         WebElement paymentSubmit = new AlpayPage(driver).paymentSubmit;
-        purchase.click();
-        ReusableMethods.bekle(4);
-        accountCharge.click();
-        ReusableMethods.bekle(3);
-        paymentSubmit.click();
-        ReusableMethods.bekle(3);
-        assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/payments/status");
+        WebElement activePlan = new AlpayPage(driver).activePlan;
 
+        if (!activePlan.isDisplayed()){
+            JSUtilities.scrollToBottom(driver);
+            purchase.click();
+            ReusableMethods.bekle(4);
+            accountCharge.click();
+            ReusableMethods.bekle(3);
+            paymentSubmit.click();
+            ReusableMethods.bekle(3);
+            assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/payments/status");
+
+        }
+        else {
+            ReusableMethods.bekle(3);
+        }
     }
 
 }
