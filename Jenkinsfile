@@ -17,7 +17,7 @@ pipeline {
                 expression { env.CHANGE_ID != null }
             }
             steps {
-                bat 'mvn clean compile'
+                bat 'mvn clean install'
             }
         }
 
