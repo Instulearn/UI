@@ -12,7 +12,7 @@ public class Anasayfa {
 
     WebDriver driver = DriverManager.getDriver(); // fetch current thread's driver
 
-    @Given("kullanici anasayfaya gider")
+    @Given("Kullanici anasayfaya gider")
     public void kullanici_anasayfaya_gider() {
         driver.get(ConfigReader.getProperty("url"));
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/");

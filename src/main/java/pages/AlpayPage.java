@@ -51,6 +51,53 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="(//*[@class = 'mt-25 text-gray font-14'])[3]")
     public WebElement testimonialYorum;
 
+    @FindBy(xpath ="(//*[contains(text(), 'Financial')])[1]")
+    public WebElement financialBaslik;
+
+    @FindBy(xpath ="//*[contains(text(), 'Financial summary')]")
+    public WebElement financialSummary;
+
+    @FindBy(xpath ="//*[contains(text(), 'Payout')]")
+    public WebElement payout;
+
+    @FindBy(xpath ="//*[contains(text(), 'Financial documents')]")
+    public WebElement financialDocuments;
+
+    @FindBy(xpath ="//*[contains(text(), 'Account summary')]")
+    public WebElement accountSummary;
+
+    @FindBy(xpath ="//*[contains(text(), 'Your identity')]")
+    public WebElement yourIdendity;
+
+    @FindBy(xpath ="//*[contains(text(), 'settings')]")
+    public WebElement settings;
+
+    @FindBy(xpath ="//select[@name = 'bank_id']")
+    public WebElement selectAccountType;
+
+    @FindBy(xpath ="//*[@name = 'bank_specifications[10]']")
+    public WebElement accountHolderField;
+
+    @FindBy(xpath ="//*[@name = 'bank_specifications[11]']")
+    public WebElement emailField;
+
+    @FindBy(xpath ="//*[@name = 'address']")
+    public WebElement addressField;
+
+    @FindBy(xpath ="//*[@name = 'identity_scan']")
+    public WebElement identityScanField;
+
+    @FindBy(xpath ="//*[@name = 'certificate']")
+    public WebElement certificateField;
+
+    @FindBy(xpath ="//*[contains(text(), 'Save')]")
+    public WebElement saveButton;
+
+    @FindBy(xpath ="//*[contains(text(), 'Request done successfully!')]")
+    public WebElement requestDone;
+
+
+
 
 
 
