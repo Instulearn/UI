@@ -276,7 +276,7 @@ public class LutfiPage extends BasePage {
     @FindBy(xpath = "//option[text()='Chocolate Technology']")
     public WebElement achievementsCourseChocolateTechnology;
 
-    @FindBy(xpath = "//option[normalize-space()='Chocolate Technology']")
+    @FindBy(xpath = "(//option[text()='Chocolate Technology'])[2]")
     public WebElement achievementsQuizChocolateTechnology;
 
     @FindBy(xpath = "(//*[text()='Chocolate Technology'])[2]")

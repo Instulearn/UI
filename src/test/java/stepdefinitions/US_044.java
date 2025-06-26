@@ -164,8 +164,10 @@ public class US_044 {
     }
     @Given("Kullanıcı Show result butonuna tıkladığında My Certificate kısmında Chocolate Technology seçilmiş olmalıdır.")
     public void kullanıcı_show_result_butonuna_tıkladığında_my_certificate_kısmında_chocolate_technology_seçilmiş_olmalıdır() {
+        ReusableMethods.bekle(2);
         lutfiPage.achievementsShowResultsButton.click();
         logger.info("Achievements Show Results Button tıklanmıştır.");
+        ReusableMethods.bekle(2);
         lutfiPage.myCertificateChocolateTechnology.isDisplayed();
         logger.info("Filtreleme işlemi başarılı olmuştur");
 
