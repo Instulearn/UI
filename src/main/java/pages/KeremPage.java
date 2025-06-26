@@ -57,7 +57,7 @@ public class KeremPage extends BasePage{
     public WebElement studentPanelLogoutButonu;
 
     @FindBy(xpath = "(//*[text()='Meetings'])[1]")
-    public WebElement studentDashboardMeetingBaglantisi;
+    public WebElement studentSideBarMeetingBaglantisi;
 
     @FindBy(xpath = "(//*[text()='Courses'])[3]")
     public WebElement studentSidebarCoursesBaglantisi;
@@ -100,6 +100,21 @@ public class KeremPage extends BasePage{
 
     @FindBy(xpath = "//*[text()='Account Balance']")
     public WebElement studentDashboardAccountBalanceBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Noticeboard']")
+    public WebElement studentDashboardNoticeboardTitle;
+
+    @FindBy(xpath = "//*[text()='New Year Sales Festival']")
+    public WebElement studentNewYearSales;
+
+    @FindBy(xpath = "//*[@data-id='12']")
+    public WebElement studentMoreInfoButtonNewYear;
+
+    @FindBy(xpath = "(//*[text()='Due to the New Year Festival, users who buy more than $ 200 will be given a 20% discount code.'])[2]")
+    public WebElement studentIlanDetay;
+
+    @FindBy(xpath = "//*[text()='Learning Statistics']")
+    public WebElement studentLearningStatics;
 
 
     // ************* Become Instructor Page locators *****************

@@ -75,6 +75,7 @@ public class US_039 {
         logger.info("Login butonuna basılıyor.");
         keremPage.loginPageLoginButonu.click();
 
+        ReusableMethods.bekle(2);
         String actualUrl = driver.getCurrentUrl();
         logger.info("Yönlendirme kontrolü yapılıyor. Beklenen URL: {}, Güncel URL: {}", panelUrl, actualUrl);
         assertEquals(actualUrl, panelUrl);
