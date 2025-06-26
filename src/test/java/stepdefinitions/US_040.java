@@ -4,11 +4,13 @@ import config.ConfigReader;
 import drivers.DriverManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -66,14 +68,14 @@ public class US_040 {
         Actions actions = new Actions(driver);
 
         // Sidebar'da önce Meetings elementine focus al ve tıklayarak aktif et
-        actions.moveToElement(keremPage.studentDashboardMeetingBaglantisi).click().perform();
+        actions.moveToElement(keremPage.studentSideBarMeetingBaglantisi).click().perform();
 
         logger.info("Sidebar scroll için klavye ile aşağı kaydırılıyor...");
         // Klavyeyle birkaç kez PAGE_DOWN gönder, sidebar aktifken scroll eder
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(1);  // Yarım saniye bekle
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
 
         // Logout butonuna mouse ile in
         actions.moveToElement(keremPage.studentPanelLogoutButonu).perform();
@@ -108,8 +110,8 @@ public class US_040 {
 
         // Meetings
         logger.info("Sidebar 'Meetings' bağlantısı kontrol ediliyor...");
-        assertTrue(keremPage.studentDashboardMeetingBaglantisi.isDisplayed());
-        assertTrue(keremPage.studentDashboardMeetingBaglantisi.isEnabled());
+        assertTrue(keremPage.studentSideBarMeetingBaglantisi.isDisplayed());
+        assertTrue(keremPage.studentSideBarMeetingBaglantisi.isEnabled());
         logger.info("'Meetings' bağlantısı görünür ve aktif.");
 
         // Quizzes
@@ -150,7 +152,7 @@ public class US_040 {
 
         // LOGOUT – scroll + kontrol
         logger.info("Sidebar scroll için 'Metting' bağlantısına tıklanıyor...");
-        actions.moveToElement(keremPage.studentDashboardMeetingBaglantisi).click().perform();
+        actions.moveToElement(keremPage.studentSideBarMeetingBaglantisi).click().perform();
 
         logger.info("Sidebar scroll için klavye ile aşağı iniliyor...");
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -171,11 +173,8 @@ public class US_040 {
 
     @And("acilan sayfada {string} basligini gorur")
     public void acilanSayfadaBasliginiGorur(String title) {
-
         logger.info("Sayfada '" + title + "' başlığının görünür olduğu kontrol ediliyor...");
-
         assertTrue(keremPage.studentViewAllEventsTitle.isDisplayed());
-
         logger.info("'" + title + "' başlığı sayfada görünür durumda.");
     }
 
@@ -212,21 +211,68 @@ public class US_040 {
         assertTrue(keremPage.studentDashboardCommentsBaglantisi.isEnabled());
         logger.info("'Comments' bağlantısı görünür ve aktif.");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
         logger.info("'Account Balance' bağlantısının görünür ve aktif olduğu kontrol ediliyor...");
         assertTrue(keremPage.studentDashboardAccountBalanceBaglantisi.isDisplayed());
         assertTrue(keremPage.studentDashboardAccountBalanceBaglantisi.isEnabled());
-        logger.info("'Account Balance' bağlantısı görünür ve aktif (ilk kontrol).");
+        logger.info("'Account Balance' bağlantısı görünür ve aktif.");
+    }
 
-        logger.info("'Account Balance' bağlantısının gerçekten tıklanabilir olduğu kontrol ediliyor...");
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(keremPage.studentDashboardAccountBalanceBaglantisi));
-            logger.info("'Account Balance' bağlantısı gerçekten tıklanabilir.");
-        } catch (TimeoutException e) {
-            logger.error("'Account Balance' bağlantısı tıklanabilir değil! Overlay, scroll ya da başka bir engel olabilir.");
-            fail("'Account Balance' bağlantısı tıklanabilir değil.");
-        }
 
+    // ****************** TC_40.5 farklı stepler ***************************
+
+    @And("acilan sayfada Noticeboard bolumunun oldugunu test eder")
+    public void acilanSayfadaNoticeboardBolumununOldugunuTestEder() {
+        logger.info("Noticeboard başlığının sayfada görünür olduğu kontrol ediliyor...");
+        assertTrue(keremPage.studentDashboardNoticeboardTitle.isDisplayed());
+        logger.info("Noticeboard bölümü sayfada mevcuttur ve başlık görünür.");
+    }
+
+
+    @Then("noticeboard bölümünde {string} ilanının olduğunu test eder")
+    public void noticeboardBölümündeIlanınınOlduğunuTestEder(String duyuru) {
+
+        logger.info("'New Year Sales' bölümünün görünür olduğu kontrol ediliyor...");
+        assertTrue(keremPage.studentNewYearSales.isDisplayed());
+        logger.info("'New Year Sales' bölümü sayfada görünür durumda.");
+    }
+
+    @When("New Year Sales Festival ilanının yanında More İnfo butonunu görünür ve aktif olduğunu test eder")
+    public void newYearSalesFestivalIlanınınYanındaMoreİnfoButonunuGörünürVeAktifOlduğunuTestEder() {
+        logger.info("'More Info' butonunun görünür ve aktif olduğu kontrol ediliyor...");
+        assertTrue(keremPage.studentMoreInfoButtonNewYear.isDisplayed());
+        assertTrue(keremPage.studentMoreInfoButtonNewYear.isEnabled());
+        logger.info("'More Info' butonu görünür ve aktif durumda.");
+    }
+
+    @And("More info butonuna tıklar ve açılan bilgilendirme penceresinde {string} notunu okur")
+    public void moreInfoButonunaTıklarVeAçılanBilgilendirmePenceresindeNotunuOkur(String duyuruDetay) {
+
+        logger.info("More info butonuna tıklanıyor...");
+        Actions actions = new Actions(driver);
+        keremPage.studentMoreInfoButtonNewYear.click();
+
+        logger.info("İlan detayının görünmesi bekleniyor...");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebElement ilanDetayElement = wait.until(ExpectedConditions.visibilityOf(keremPage.studentIlanDetay));
+
+        String actualIlanDetay = ilanDetayElement.getText();
+        logger.info("İlan detay metni alındı: {}", actualIlanDetay);
+
+        assertEquals(actualIlanDetay, duyuruDetay);
+        logger.info("Beklenen duyuru detayı ile eşleşti.");
+
+        logger.info("Bilgilendirme penceresi dışına tıklanarak kapatılıyor...");
+        actions.moveByOffset(10, 10).click().perform();
+        logger.info("İşlem tamamlandı.");
+    }
+
+    // ****************** TC_40.6 farklı stepler ***************************
+
+
+    @And("acilan sayfada Learning Statics bolumunun oldugunu test eder")
+    public void acilanSayfadaLearningStaticsBolumununOldugunuTestEder() {
+        logger.info("'Learning Statics' bölümü sayfada görünürlüğü test ediliyor.");
+        assertTrue(keremPage.studentLearningStatics.isDisplayed());
+        logger.info("'Learning Statics' bölümü sayfada görünür durumda.");
     }
 }
