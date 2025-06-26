@@ -138,8 +138,10 @@ public class CihatPage extends BasePage {
     @FindBy(xpath ="//*[@id=\"app\"]/section[2]/form/div[1]/div[2]/label")
     public WebElement AccountCharged;
 
+
     @FindBy(xpath ="//*[@id=\"paymentSubmit\"]")
     public WebElement StartPayment;
+
 
     @FindBy(xpath ="//*[@id=\"app\"]/div[3]/div[2]")
     public WebElement Congratulations;

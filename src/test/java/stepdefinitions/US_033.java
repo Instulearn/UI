@@ -299,10 +299,12 @@ public class US_033 {
         if (!Congratulations.isDisplayed()) {
             throw new AssertionError("Congratulations görünür değil: ");
 
+
         }
         ReusableMethods.bekle(2);
         throw new io.cucumber.java.PendingException();
     }
+
 
 
 
