@@ -1,11 +1,20 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class LutfiPage {
+public class LutfiPage extends BasePage {
+
+    public LutfiPage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+    // Locators
     @FindBy(xpath = "//a[span[text()='Certificates']]")
     public WebElement certificatesButton;
 
@@ -251,6 +260,54 @@ public class LutfiPage {
 
     @FindBy(xpath = "//div[@id='certificatesCollapse']//a[text()='Achievements']")
     public WebElement achievementsLink;
+
+    @FindBy(xpath = "//*[contains(text(), 'Achievements')]")
+    public WebElement achievementsButton;
+
+    @FindBy(xpath = "//*[contains(text(), 'Certificate Validation')]")
+    public WebElement certificateValidationButton;
+
+    @FindBy(xpath = "//*[contains(text(), 'Completion Certificates')]")
+    public WebElement completionCertificatesButton;
+
+    @FindBy(xpath = "//h2[text()='Filter certificates']")
+    public WebElement filterCertificatesTitle;
+
+    @FindBy(xpath = "//option[text()='Chocolate Technology']")
+    public WebElement achievementsCourseChocolateTechnology;
+
+    @FindBy(xpath = "//option[normalize-space()='Chocolate Technology']")
+    public WebElement achievementsQuizChocolateTechnology;
+
+    @FindBy(xpath = "(//*[text()='Chocolate Technology'])[2]")
+    public WebElement myCertificateChocolateTechnology;
+
+    @FindBy(xpath = "//input[@id='certificate_id']")
+    public WebElement certificateValidationCertificateIDTextbox;
+
+    @FindBy(xpath = "(//h3[text()='Certificate is valid'])[2]")
+    public WebElement certificateIsValidScreen;
+
+    @FindBy(xpath = "(//button[text()='Close'])[2]")
+    public WebElement certificateIsValidScreenCloseButton;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
