@@ -34,6 +34,9 @@ public class KeremPage extends BasePage{
     @FindBy(xpath = "//a[@class='d-none d-lg-flex btn btn-sm btn-primary nav-start-a-live-btn']")
     public WebElement anasayfaCreateNewCourseButonu;
 
+    @FindBy(xpath = "//*[text()='Dashboard']")
+    public WebElement anasayfaDashboardBaglantisi;
+
 
     // ************* Login sayfa locators *****************
     @FindBy(xpath = "//*[@id='email']")
@@ -50,6 +53,53 @@ public class KeremPage extends BasePage{
     @FindBy(xpath = "//*[text()='Home']")
     public WebElement studentHomeBaglantısı;
 
+    @FindBy(xpath = "//*[text()='Log out']")
+    public WebElement studentPanelLogoutButonu;
+
+    @FindBy(xpath = "(//*[text()='Meetings'])[1]")
+    public WebElement studentDashboardMeetingBaglantisi;
+
+    @FindBy(xpath = "(//*[text()='Courses'])[3]")
+    public WebElement studentSidebarCoursesBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Quizzes']")
+    public WebElement studentSidebarQuizzesBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Certificates']")
+    public WebElement studentSidebarSertifikaBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Financial']")
+    public WebElement studentSidebarFinansBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Support']")
+    public WebElement studentSidebarSupportBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Notifications']")
+    public WebElement studentSidebarNotificationsBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Settings']")
+    public WebElement studentSidebarSettingsBaglantisi;
+
+    @FindBy(xpath = "//*[text()='View all events']")
+    public WebElement studentViewAllEventsTitle;
+
+    @FindBy(xpath = "//*[text()='Purchased Courses']")
+    public WebElement studentDashboardPurchaseCourseTitle;
+
+    @FindBy(xpath = "//*[text()='Support Messages']")
+    public WebElement studentDashboardSupportMessagesTitle;
+
+    @FindBy(xpath = "(//*[text()='Charge account'])[2]")
+    public WebElement studentDashboardChargeAccountBaglantisi;
+
+    @FindBy(xpath = "(//*[text()='Meetings'])[2]")
+    public WebElement studentDashboardBodyMeetingsBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Comments']")
+    public WebElement studentDashboardCommentsBaglantisi;
+
+    @FindBy(xpath = "//*[text()='Account Balance']")
+    public WebElement studentDashboardAccountBalanceBaglantisi;
 
 
     // ************* Become Instructor Page locators *****************
@@ -73,8 +123,6 @@ public class KeremPage extends BasePage{
 
     @FindBy(xpath = "(//button[@type='submit'])[2]")
     public WebElement becomeInstructorSendRequestButton;
-
-
 
     @FindBy(xpath = "(//input[@type='text'])[5]")
     public WebElement becomeInstructorIdentity;

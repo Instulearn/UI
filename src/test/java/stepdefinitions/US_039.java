@@ -45,8 +45,6 @@ public class US_039 {
         logger.info("Yönlendirilme kontrolü yapılıyor");
         assertEquals(driver.getCurrentUrl(),ConfigReader.getProperty("loginUrl"));
         logger.info("Yönlendirilme başarılı.");
-
-
     }
 
     @Then("{string} ve password kutusuna geçerli bilgileri girer")
@@ -65,10 +63,6 @@ public class US_039 {
         String password = UserConfigReader.getProperty("keremPassword");
         logger.info("Password kutusuna değer giriliyor.");
         keremPage.loginPagePasswordKutusu.sendKeys(password);
-
-
-
-
     }
 
     @And("login butonuna basar ve ‘Student Panel' {string} sayfasına yönlendirilir")
@@ -86,11 +80,9 @@ public class US_039 {
         assertEquals(actualUrl, panelUrl);
         
         logger.info("Yönlendirme başarılı şekilde gerçekleşti.");
-        
-        
     }
 
-    @Then("kullanıcı header bölümündeki ‘Home’ butonuna tıklar. url ' e gider.")
+    @Then("kullanıcı header bölümündeki ‘Home’ butonuna tıklar. anasayfaya gider.")
     public void kullanıcıHeaderBölümündekiHomeButonunaTıklarUrlEGider() {
         logger.info("Home butonunun görünür ve aktif olduğu kontrol ediliyor.");
         assertTrue(keremPage.studentHomeBaglantısı.isDisplayed());
@@ -135,7 +127,21 @@ public class US_039 {
 
         logger.info("Logout bağlantısına tıklanıyor.");
         keremPage.anasayfaLogoutBaglantisi.click();
+
+        //logout sonrası anasayfa açılmalı, işlemin doğruluğu test ediliyor
+        logger.info("Logout işlemi sonrası yönlendirme kontrol ediliyor...");
+        ReusableMethods.bekle(1);
+        String expectedUrl= ConfigReader.getProperty("url");
+        String actualUrl = driver.getCurrentUrl();
+        if (actualUrl.equals(expectedUrl)) {
+            logger.info("Logout başarılı. Kullanıcı ana sayfaya yönlendirildi.");
+        } else {
+            logger.error("Logout başarısız! Beklenen URL: " + expectedUrl + ", Gerçekleşen URL: " + actualUrl);
+        }
+        assertEquals(actualUrl, expectedUrl);
+
     }
+
 
     // ********************* TC_39.2 farklı stepler ************************
 
@@ -150,7 +156,6 @@ public class US_039 {
         ReusableMethods.bekle(2);
         assertEquals(actualUrl,becomeInstUrl);
         logger.info("Yönlendirme başarıyla gerçekleşti.");
-
     }
 
     @And("açılan sayfada {string} başlığını görür ve meslek olarak 'Math’i seçer")
@@ -159,7 +164,6 @@ public class US_039 {
         String actualTitle = keremPage.becomeInstPageOccupationsTitle.getText();
         assertEquals(actualTitle,title);
         logger.info("Sayfa başlığı doğrulandı: " + actualTitle);
-
 
 
         logger.info("'Math' mesleğinin görünür olduğu doğrulanıyor.");
@@ -177,6 +181,7 @@ public class US_039 {
 
     @Then("account Type select menü'den instructorı seçer")
     public void accountTypeSelectMenüDenInstructorıSeçer() {
+        // Sayfanın alt kısmında kalan bağlantılar için yönlendirilir.
         Actions actions = new Actions(driver);
         actions.moveToElement(keremPage.becomeInstructorAccountTypeDDM).perform();
         logger.info("Account Type dropdown menüsünün görünür ve aktif olduğu kontrol ediliyor.");
@@ -188,9 +193,7 @@ public class US_039 {
         select.selectByValue("teacher");
         
         logger.info("'instructor' seçeneği başarıyla seçildi.");
-
     }
-
 
     @And("‘Payout account’ select menüden ‘Stripe’ seçer")
     public void payoutAccountSelectMenüdenStripeSeçer() {
@@ -204,7 +207,6 @@ public class US_039 {
 
         logger.info("'Stripe' değeri başarıyla seçildi.");
     }
-
 
     @Then("Açılan bölümde Account Holder kısmına {string} , Account ID kısmına {string} bilgilerini girer")
     public void açılanBölümdeAccountHolderKısmınaAccountIDKısmınaBilgileriniGirer(String hesapSahibi, String hesapKimligi) {
@@ -247,9 +249,9 @@ public class US_039 {
     public void açılanSayfadaCreateACourseButonunuGörürVeBaşarılıKayıtYapığıTeyitEder() {
         logger.info("Create New Course butonunun görünür olduğu kontrol ediliyor.");
         assertTrue(keremPage.anasayfaCreateNewCourseButonu.isDisplayed());
-
-
     }
+
+
 
 
 }
