@@ -85,7 +85,6 @@ public class US_033 {
 
 
         ReusableMethods.bekle(2);
-        throw new PendingException();
     }
 
 
@@ -96,7 +95,6 @@ public class US_033 {
 
         assertTrue(FilterItemsButon.isDisplayed());
         FilterItemsButon.click();
-        throw new io.cucumber.java.PendingException();
 
     }
 
@@ -110,7 +108,6 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
     }
 
     @Given("Secilen kursların tarih  bilgileri goruntulenir")
@@ -123,7 +120,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Given("Secilen kursların ders adı bilgileri goruntulenir")
@@ -136,7 +133,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Given("Secilen kursların ınstructor bilgileri goruntulenir")
@@ -148,7 +145,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
     }
 
 
@@ -162,7 +159,7 @@ public class US_033 {
 
         ReusableMethods.bekle(4);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/bundles/Solar-Energy-Design-Course-From-Zero-To-Hero");
-        throw new io.cucumber.java.PendingException();
+
 
     }
 
@@ -176,7 +173,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
 
 
     }
@@ -190,7 +187,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
 
     }
 
@@ -203,7 +200,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Given("kursun puanlaması görüntülenir")
@@ -215,7 +212,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Given("kurs ıle ilgili yorum sayfası görüntülenir")
@@ -227,7 +224,7 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Given("instructor'a ait profil sayfası görüntülenir")
@@ -266,7 +263,6 @@ public class US_033 {
 
         assertTrue(AccountCharged.isDisplayed());
         AccountCharged.click();
-        throw new io.cucumber.java.PendingException();
 
     }
 
@@ -277,7 +273,6 @@ public class US_033 {
 
         assertTrue(StartPayment.isDisplayed());
         StartPayment.click();
-        throw new io.cucumber.java.PendingException();
 
 
     }
@@ -288,7 +283,6 @@ public class US_033 {
         WebElement Congratulations =new CihatPage(driver).Congratulations;
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/payments/status");
-        throw new io.cucumber.java.PendingException();
     }
 
 
@@ -302,7 +296,6 @@ public class US_033 {
 
         }
         ReusableMethods.bekle(2);
-        throw new io.cucumber.java.PendingException();
 
 
 
