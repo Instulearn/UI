@@ -167,7 +167,7 @@ public class US_031 {
     @Then("sayfa aşağıya çekilir")
     public void sayfa_aşağıya_çekilir() {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
     }
     @Then("adress text box'ına ilgili data girilir")
     public void adress_text_box_ına_ilgili_data_girilir() {

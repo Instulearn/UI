@@ -135,6 +135,57 @@ public class OmerPage extends BasePage {
     @FindBy(xpath = "//*[@Class='delete-action btn btn-sm btn-danger']")
     public WebElement deleteAccountButton;
 
+    @FindBy(xpath = "(//*[@Class='font-14 text-dark-blue font-weight-500'])[3]")
+    public WebElement courseBundlesButton;
+
+    @FindBy(xpath = "//a[@href='/panel/bundles/new']")
+    public WebElement coursesBundlesNewLinkButton;
+
+    @FindBy(xpath = "//*[@name='title']")
+    public WebElement titleTextBox;
+
+    @FindBy(xpath = "//*[@name='seo_description']")
+    public WebElement seoMetaDescriptionTextBox;
+
+    @FindBy(xpath = "//*[@class='note-editable card-block']")
+    public WebElement descriptionTextBox;
+
+    @FindBy(xpath = "//*[@Class='btn btn-sm btn-primary '] ")
+    public WebElement previousButton;
+
+    @FindBy(xpath = "//*[@Class='btn btn-sm btn-primary'] ")
+    public WebElement sendOfReviewButton;
+
+    @FindBy(xpath = "//*[@Class=' btn btn-sm btn-primary'] ")
+    public WebElement saveAsDraftButton;
+
+    @FindBy(xpath = "//*[@Class='delete-action bundle-actions btn btn-sm btn-danger mt-20 mt-md-0'] ")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//*[@name='thumbnail']")
+    public WebElement thumbnailTextBox;
+
+    @FindBy(xpath = "//*[@name='image_cover']")
+    public WebElement coverImageTextBox;
+
+    @FindBy(xpath = "//*[@Class='custom-select ']")
+    public WebElement categoryCheckBox;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
