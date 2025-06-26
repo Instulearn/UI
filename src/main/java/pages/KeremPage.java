@@ -31,6 +31,9 @@ public class KeremPage extends BasePage{
     @FindBy(xpath = "//*[text()='Logout']")
     public WebElement anasayfaLogoutBaglantisi;
 
+    @FindBy(xpath = "//a[@class='d-none d-lg-flex btn btn-sm btn-primary nav-start-a-live-btn']")
+    public WebElement anasayfaCreateNewCourseButonu;
+
 
     // ************* Login sayfa locators *****************
     @FindBy(xpath = "//*[@id='email']")
@@ -55,6 +58,27 @@ public class KeremPage extends BasePage{
 
     @FindBy(xpath = "//*[@for='checkbox601']")
     public WebElement becomeInstructorPageMath;
+
+    @FindBy(xpath = "//*[@name='role']")
+    public WebElement becomeInstructorAccountTypeDDM;
+
+    @FindBy(xpath = "//*[@name='bank_id']")
+    public WebElement becomeInstructorPayoutDDM;
+
+    @FindBy(xpath = "(//input[@type='text'])[3]")
+    public WebElement becomeInstructorAccountHolder;
+
+    @FindBy(xpath = "(//input[@type='text'])[4]")
+    public WebElement becomeInstructorAccountID;
+
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
+    public WebElement becomeInstructorSendRequestButton;
+
+
+
+    @FindBy(xpath = "(//input[@type='text'])[5]")
+    public WebElement becomeInstructorIdentity;
+
 
 
 }
