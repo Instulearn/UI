@@ -3,13 +3,17 @@ package stepdefinitions;
 import drivers.DriverManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.CihatPage;
 import utils.JSUtilities;
 import utils.ReusableMethods;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
@@ -55,11 +59,15 @@ public class US_012 {
     @When("All Instructors butonu tıklanır")
     public void all_instructors_butonu_tiklanir() {
 
-        WebElement allInstructorButon =new CihatPage(driver).AllInstructorButon;
-        allInstructorButon.click();
+      //  WebElement allInstructorButon =new CihatPage(driver).AllInstructorButon;
+      //  allInstructorButon.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/section[15]/div[1]/a")));
 
-        ReusableMethods.bekle(4);
+
+        ReusableMethods.bekle(6);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/instructors");
+        throw new io.cucumber.java.PendingException();
         }
 
 

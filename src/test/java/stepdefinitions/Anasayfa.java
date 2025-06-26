@@ -15,12 +15,14 @@ public class Anasayfa {
     @Given("Kullanici anasayfaya gider")
     public void kullanici_anasayfaya_gider() {
         driver.get(ConfigReader.getProperty("url"));
+        ReusableMethods.bekle(3);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/");
     }
 
     @Given("Kullanici login sayfasina gider")
     public void kullanici_login_sayfasina_gider() {
         driver.get(ConfigReader.getProperty("loginUrl"));
+        ReusableMethods.bekle(3);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/login");
     }
 
@@ -28,7 +30,7 @@ public class Anasayfa {
     public void kullanici_login_olur(String email, String password) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(email, password);
-        ReusableMethods.bekle(4);
+        ReusableMethods.bekle(3);
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/panel");
 
     }
