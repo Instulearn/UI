@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeClass;
 				"json:target/cucumber-reports/cucumber.json", // JSON raporu (Cucumber HTML için gerekli)
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" // Allure raporları için plugin
 		},
-		monochrome = true,                         // Konsol çıktısını daha okunabilir hale getirir
+		monochrome = false,                         // Konsol çıktısını daha okunabilir hale getirir
 		tags = "google"                           // Yalnızca belirtilen etiketli senaryolar çalıştırılır.
 )
 public class TestRunner extends AbstractTestNGCucumberTests{
