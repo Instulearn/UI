@@ -59,10 +59,11 @@ Feature: [US_012] ınstructorları inceleyip randevu oluşturabilme
     * Secilen kursların ders adı bilgileri goruntulenir
     * Secilen kursların ınstructor bilgileri goruntulenir
     * istenen kurs secildiginde kurs sayfası görüntülenir
-    * kurs sayfasında add to card ve buy now butonları görüntülenir
+    * kurs sayfasında add to card  görüntülenir
+    * kurs sayfasında buy now butonu görüntülenir
     * Kursla ilgili detaylı bilgiler görüntülenir
     * kursun puanlaması görüntülenir
-    * kurs ıle ilgili yorum yapılır
+    * kurs ıle ilgili yorum sayfası görüntülenir
     * instructor'a ait profil sayfası görüntülenir
 
 
@@ -75,9 +76,9 @@ Feature: [US_012] ınstructorları inceleyip randevu oluşturabilme
     * Courses sayfasında "Filter items" butonu  görüntülenir
     * Filtreleme seçenekleri işaretlenir
     * Courses sayfasında "Filter items" butonu  tıklanır
-    * Listeden kurs seçililr tıklanarak kurs sayfası açılır
+    * istenen kurs secildiginde kurs sayfası görüntülenir
     * Buy now butonu tıklanır
-    * Ödeme sayfası görüntülenir
     * Account charge butonu tıklanır
     * start payment butonu tıklanır
+    * Ödeme sonuç sayfası açılır
     * Your payment successfully done... mesajı görüntülenir
