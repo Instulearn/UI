@@ -14,7 +14,10 @@ pipeline {
 
         stage('Build') {
             when {
-                expression { env.CHANGE_ID != null }
+                allOf {
+                    expression { env.CHANGE_ID != null }
+                    not { changeset "README.md" } // ⛔ Skip if only doc change
+                }
             }
             steps {
                 bat 'mvn clean install'
@@ -27,13 +30,7 @@ pipeline {
             }
             steps {
                 script {
-                    try {
-                        bat 'mvn test -Dcucumber.options="--plugin pretty"'
-                    } catch (Exception e) {
-                        echo "❌ Cucumber test execution failed: ${e.getMessage()}"
-                        currentBuild.result = 'FAILURE'
-                        throw e
-                    }
+                    bat(script: 'mvn test -Dcucumber.options="--plugin pretty"', returnStatus: true) == 0 ?: error("Cucumber tests failed ❌")
                 }
             }
             post {
@@ -49,7 +46,7 @@ pipeline {
             }
             steps {
                 allure includeProperties: false,
-                       results: [[path: 'target/allure-results']]
+                       results: [[path: '**/allure-results']] // 🔍 Handle nested result dirs
             }
         }
 
