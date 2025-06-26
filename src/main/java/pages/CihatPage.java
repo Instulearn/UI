@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -100,6 +101,89 @@ public class CihatPage extends BasePage {
 
     @FindBy(xpath ="//*[@id=\"filterLanguagesubscribe\"]")
     public WebElement FilterCheckBox2;
+
+    @FindBy(xpath ="//*[@id=\"filtersForm\"]/div[2]/div[1]/div/div[1]/div/figure/figcaption/div[4]")
+    public WebElement KursFiyati;
+
+    @FindBy(xpath ="//*[@id=\"filtersForm\"]/div[2]/div[1]/div/div[1]/div/figure/figcaption/div[3]/div[3]")
+    public WebElement KursTarihi;
+
+    @FindBy(xpath ="//*[@id=\"filtersForm\"]/div[2]/div[1]/div/div[1]/div/figure/figcaption/a")
+    public WebElement KursAdi;
+
+    @FindBy(xpath ="//*[@id=\"filtersForm\"]/div[2]/div[1]/div/div[1]/div/figure/figcaption/div[1]")
+    public WebElement KursInstructorsBilgileri;
+
+    @FindBy(xpath ="//*[@id=\"filtersForm\"]/div[2]/div[1]/div/div[1]/div/figure/div/a")
+    public WebElement SecilenKurs;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section[2]/div/div[2]/div[1]/div[2]/form/div[2]/button[1]")
+    public WebElement AddToCard;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section[2]/div/div[2]/div[1]/div[2]/form/div[2]/button[2]")
+    public WebElement BuyButon;
+
+    @FindBy(xpath ="//*[@id=\"information\"]/div[1]/div")
+    public WebElement KursDetay;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section[2]/div/div[1]/div/div[1]/div[1]/div")
+    public WebElement KursPuan;
+
+    @FindBy(xpath ="//*[@id=\"information\"]/div[2]/div/form/div/textarea")
+    public WebElement KursYorum;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section[2]/div/div[2]/div[3]/div[4]/a[1]")
+    public WebElement InstructorsProfile;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section[2]/form/div[1]/div[2]/label")
+    public WebElement AccountCharged;
+
+
+    @FindBy(xpath ="//*[@id=\"paymentSubmit\"]")
+    public WebElement StartPayment;
+
+
+    @FindBy(xpath ="//*[@id=\"app\"]/div[3]/div[2]")
+    public WebElement Congratulations;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
