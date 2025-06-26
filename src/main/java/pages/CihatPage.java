@@ -80,6 +80,38 @@ public class CihatPage extends BasePage {
     @FindBy(xpath ="//*[@id=\"PickTimeBody\"]/div[6]/button")
     public WebElement meetingson;
 
+    @FindBy(xpath ="//*[@id=\"navbarContent\"]/ul/li[3]/a")
+    public WebElement CoursesDashbord;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section/div/div/div/div/h1")
+    public WebElement CoursesText;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section/div/div/div/div/div/form/div/input")
+    public WebElement CoursesSearchText;
+
+    @FindBy(xpath ="//*[@id=\"app\"]/section/div/div/div/div/div/form/div/button")
+    public WebElement CoursesSearchButon;
+
+    @FindBy(xpath ="//*[@id=\"filtersForm\"]/div[2]/div[2]/div/button")
+    public WebElement FilterItemsButon;
+
+    @FindBy(xpath ="//label[contains(text(),'Course Bundle')]/preceding-sibling::input[@type='checkbox']")
+    public WebElement FilterCheckBox1;
+
+    @FindBy(xpath ="//*[@id=\"filterLanguagesubscribe\"]")
+    public WebElement FilterCheckBox2;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
