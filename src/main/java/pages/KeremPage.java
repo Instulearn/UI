@@ -1,5 +1,6 @@
 package pages;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import org.openqa.selenium.WebDriver;
@@ -141,6 +142,114 @@ public class KeremPage extends BasePage{
 
     @FindBy(xpath = "(//input[@type='text'])[5]")
     public WebElement becomeInstructorIdentity;
+
+
+
+    // ************* Register Page locators *****************
+    @FindBy(xpath = "//a[@class='py-5 px-10 text-dark-blue font-14']")
+    public WebElement registerButton;
+
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement emailBox;
+
+    @FindBy(xpath = "//input[@name='full_name']")
+    public WebElement fullName;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement password;
+
+    @FindBy(xpath = "//input[@id='confirm_password']")
+    public WebElement retypePassword;
+
+    @FindBy(xpath = "//*[@name='term']")
+    public WebElement termsRulesConfirmButton;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary btn-block mt-20']")
+    public WebElement signupButton;
+
+    @FindBy(xpath = "//*[@for='term']")
+    public WebElement termsRulesConfirmYazisi;
+
+
+    // ************* Instructor Panel locators *****************
+    @FindBy(xpath = "(//a[@role='button'])[3]")
+    public WebElement instructorMeetings;
+
+    @FindBy(xpath = "//*[text()='My reservations']")
+    public WebElement instructorMyReservationsLinki;
+
+    @FindBy(xpath = "//*[text()='Requests']")
+    public WebElement instructorRequestLinki;
+
+    @FindBy(xpath = "//*[text()='Settings']")
+    public WebElement instructorSettingsLinki;
+
+    @FindBy(xpath = "//*[@class='activities-container mt-25 p-20 p-lg-35']")
+    public WebElement instructorMeetingStaticsAlani;
+
+    @FindBy(xpath = "//*[text()='Filter meetings']")
+    public WebElement instructorFilterMeetingsTitle;
+
+    @FindBy(xpath = "//*[@name='instructor_id']")
+    public WebElement filterInstructorDDM;
+
+    @FindBy(xpath = "//*[text()='Show Results']")
+    public WebElement instructorShowResultButton;
+
+    @FindBy(xpath = "(//*[text()='Seraphina Lawson'])[2]")
+    public WebElement seraphinaLawsonText;
+
+    @FindBy(xpath = "//*[@class='btn-group dropdown table-actions']")
+    public WebElement meetingActionButton;
+
+    @FindBy(xpath = "//*[@name='open_meetings']")
+    public WebElement showOnlyMeetingButonu;
+
+    @FindBy(xpath = "//*[@name='from']")
+    public WebElement instructorMeetingFiltreFrom;
+
+    @FindBy(xpath = "//*[@name='to']")
+    public WebElement instructorMeetingFitlreTo;
+
+    @FindBy(xpath = "//*[@name='day']")
+    public WebElement instructorMeetingFitlreDayDDM;
+
+    @FindBy(xpath = "//*[@name='status']")
+    public WebElement instructorMeetingFitlreStatusDDM;
+
+    @FindBy(xpath = "//*[text()='Requests']")
+    public WebElement instructorRequestsLinki;
+
+    @FindBy(xpath = "//*[@class='activities-container mt-25 p-20 p-lg-35']")
+    public WebElement instructorRequestMeetingStatics;
+
+    @FindBy(xpath = "//*[@name='student_id']")
+    public WebElement requestFiltreStudentDDM;
+
+    @FindBy(xpath = "//*[@class='d-block font-weight-500']")
+    public WebElement keremCeylan2Text;
+
+    @FindBy(xpath = "//*[text()='Add to Calendar']")
+    public WebElement addToCalendarButonu;
+
+    @FindBy(xpath = "//*[text()='Contact student']")
+    public WebElement contactStudentButonu;
+
+    @FindBy(xpath = "(//*[text()='Close'])[4]")
+    public WebElement studentContactCloseButonu;
+
+    @FindBy(xpath = "//*[text()='Student contact information']")
+    public WebElement studetContactInformationText;
+
+    @FindBy(xpath = "//*[text()='Finish meeting']")
+    public WebElement finishMeetingButton;
+
+    @FindBy(xpath = "//*[@class='swal2-title']")
+    public WebElement finishMeetingPageText;
+
+    @FindBy(xpath = "//*[text()='Cancel']")
+    public WebElement finishMeetingPageCancelButton;
+
 
 
 

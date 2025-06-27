@@ -1,17 +1,23 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import config.ConfigReader;
 import config.UserConfigReader;
 import drivers.DriverManager;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import pages.KeremPage;
 import utils.ReusableMethods;
+
+import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -21,12 +27,13 @@ public class US_039 {
     WebDriver driver = DriverManager.getDriver();
     private static final Logger logger = LogManager.getLogger(US_039.class);
     KeremPage keremPage = new KeremPage(driver);
+    Faker faker = new Faker();
 
 
     // ****************** TC_39.1 ***************************
 
-    @Given("student anasayfaya gider")
-    public void student_anasayfaya_gider() {
+    @Given("visitor anasayfaya gider")
+    public void visitor_anasayfaya_gider() {
         logger.info("Student anasayfaya gidiyor - test başlıyor");
         driver.get(ConfigReader.getProperty("url"));
         assertEquals(driver.getCurrentUrl(),ConfigReader.getProperty("url"));
@@ -65,8 +72,8 @@ public class US_039 {
         keremPage.loginPagePasswordKutusu.sendKeys(password);
     }
 
-    @And("login butonuna basar ve ‘Student Panel' {string} sayfasına yönlendirilir")
-    public void loginButonunaBasarVeStudentPanelSayfasınaYönlendirilir(String panelUrl) {
+    @And("login butonuna basar ve {string} Panel' {string} sayfasına yönlendirilir")
+    public void loginButonunaBasarVeStudentPanelSayfasınaYönlendirilir(String type , String panelUrl) {
 
         logger.info("Login butonu görünür ve aktif olup olmadığı kontrol ediliyor.");
         assertTrue(keremPage.loginPageLoginButonu.isDisplayed());
@@ -140,7 +147,6 @@ public class US_039 {
             logger.error("Logout başarısız! Beklenen URL: " + expectedUrl + ", Gerçekleşen URL: " + actualUrl);
         }
         assertEquals(actualUrl, expectedUrl);
-
     }
 
 
@@ -253,7 +259,78 @@ public class US_039 {
     }
 
 
+    @When("anasayfada register butonuna basar ve {string} sayfasina yönlendirilir")
+    public void anasayfadaRegisterButonunaBasarVeSayfasinaYönlendirilir(String registerUrl) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        logger.info("Register butonunun görünür ve aktif olduğu kontrol ediliyor.");
+
+        // Register butonunun görünür ve aktif olması bekleniyor
+        wait.until(ExpectedConditions.visibilityOf(keremPage.registerButton));
+        wait.until(ExpectedConditions.elementToBeClickable(keremPage.registerButton));
+        logger.info("Register butonu görünür ve aktif.");
+
+        keremPage.registerButton.click();
+        logger.info("Register butonuna tıklandı.");
+
+        // Sayfanın istenilen URL'ye yönlenmesi bekleniyor
+        wait.until(ExpectedConditions.urlToBe(registerUrl));
+        logger.info("Sayfa yönlendirmesi tamamlandı, beklenen URL geldi: " + registerUrl);
+
+        String actualUrl = driver.getCurrentUrl();
+        logger.info("Sayfa URL'si kontrol ediliyor. Beklenen: {}, Gerçek: {}", registerUrl, actualUrl);
+        assertEquals(actualUrl, registerUrl);
+        logger.info("URL doğrulaması başarılı.");
+
+    }
 
 
+    @Then("faker ile yeni bir email üretip password ile giriş yapar")
+    public void fakerIleYeniBirEmailÜretipPasswordIleGirişYapar() {
+        String email = faker.internet().emailAddress();
+        String password = UserConfigReader.getProperty("keremPassword");
+
+        logger.info("Email üretildi: " + email);
+
+        assertTrue(keremPage.emailBox.isDisplayed());
+        assertTrue(keremPage.emailBox.isEnabled());
+        logger.info("Email kutusu görüntülendi ve aktif.");
+        keremPage.emailBox.sendKeys(email);
+        logger.info("Email kutusuna veri girildi.");
+
+        assertTrue(keremPage.fullName.isDisplayed());
+        assertTrue(keremPage.fullName.isEnabled());
+        logger.info("Full Name kutusu görüntülendi ve aktif.");
+        keremPage.fullName.sendKeys("John Doe");
+        logger.info("Full Name kutusuna 'John Doe' yazıldı.");
+
+        assertTrue(keremPage.password.isDisplayed());
+        assertTrue(keremPage.password.isEnabled());
+        logger.info("Password kutusu görüntülendi ve aktif.");
+        keremPage.password.sendKeys(password);
+        logger.info("Password kutusuna veri girildi.");
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(keremPage.signupButton).perform();
+        logger.info("Signup butonuna scroll yapıldı.");
+
+        assertTrue(keremPage.retypePassword.isDisplayed());
+        assertTrue(keremPage.retypePassword.isEnabled());
+        logger.info("Retype password kutusu görüntülendi ve aktif.");
+        keremPage.retypePassword.sendKeys(password);
+        logger.info("Retype password kutusuna veri girildi.");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(keremPage.termsRulesConfirmYazisi));
+        logger.info("Term kutucuğu görünür durumda.");
+
+        // JavaScript ile checkbox tıklama
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", keremPage.termsRulesConfirmButton);
+        logger.info("Term kutucuğu JS ile tıklandı.");
+
+        keremPage.signupButton.click();
+        logger.info("Signup butonuna tıklandı.");
+    }
 }
 
