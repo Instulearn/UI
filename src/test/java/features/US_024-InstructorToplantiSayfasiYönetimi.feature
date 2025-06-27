@@ -6,7 +6,7 @@
       Given visitor anasayfaya gider
       Then login butonuna tıklar ve loginUrl sayfasına yönlendirilir
       When "kerem.teacher@instulearn.com" ve password kutusuna geçerli bilgileri girer
-      And login butonuna basar ve ‘Teacher Panel' "https://qa.instulearn.com/panel" sayfasına yönlendirilir
+      And login butonuna basar ve "Teacher" Panel' "https://qa.instulearn.com/panel" sayfasına yönlendirilir
       Then instructor Dashboard sidebarında Meetings linkini görür ve tıklar
       And instructor meetings linkinin altında yer alan My Reservations, Requests ve Settings linkleri görür ve aktif olduğunu test eder
       Then dashboard sidebard'da yer alan Logout linkine tıklar
@@ -78,13 +78,52 @@
 
 
     @kerem_024
-    Scenario: TC_24.7 Instructor, toplantı sayfasında 'yalnızca açık toplantıları göster' onay kutusunun görünürlük ve seçilebilirlik testi
+    Scenario: TC_24.8 Instructor'ın, Toplantı sayfasında 'Ayarlar' bağlantısına tıklanarak güne ilişkin ayarlamalar (süre ekleme) yapılabilmesi testi
       Given visitor anasayfaya gider
       Then login butonuna tıklar ve loginUrl sayfasına yönlendirilir
       When "kerem.teacher@instulearn.com" ve password kutusuna geçerli bilgileri girer
       And login butonuna basar ve "Teacher" Panel' "https://qa.instulearn.com/panel" sayfasına yönlendirilir
       Then instructor Dashboard sidebarında Meetings linkini görür ve tıklar
-      And meetings linkinin altında yer alan Requests linkine tiklar
-      And dashboard body bölümünde Show Only Open Meetings yazısını görür ve yanındaki switch’e tıklar
+      And meetings linkinin altında yer alan Settings linkine tiklar ve ilgili sayfaya yonlendirilir
+      And sayfada My timesheet alanını görür ve toplantı günlerini ayarlayacağı buton ‘Actions’ başlığı altında Add Time bağlantısı ile ayarlanır
+      Then dashboard sidebard'da yer alan Logout linkine tıklar
+
+
+    @kerem_024
+    Scenario: TC_24.9 Yüz yüze toplantılar için saatlik ücret seçimi, minimum ve maksimum katılımcı sayısını belirleyebilmelidir.
+      Given visitor anasayfaya gider
+      Then login butonuna tıklar ve loginUrl sayfasına yönlendirilir
+      When "kerem.teacher@instulearn.com" ve password kutusuna geçerli bilgileri girer
+      And login butonuna basar ve "Teacher" Panel' "https://qa.instulearn.com/panel" sayfasına yönlendirilir
+      Then instructor Dashboard sidebarında Meetings linkini görür ve tıklar
+      And meetings linkinin altında yer alan Settings linkine tiklar ve ilgili sayfaya yonlendirilir
+      And sayfada In-person meetings alanını görür ve yüz yüze toplantılarını bir switch yardımı ile ayarlar.
+      Then yüz yüze görüşmelerini; saatlik ücret, minimum ve maksimum öğrencilere ait üç text alanı ile planlar
+      Then dashboard sidebard'da yer alan Logout linkine tıklar
+
+
+    @kerem_024
+    Scenario: TC_24.10 Toplantı sayfasında, grup toplantılarında saatlik ücret seçimi yapılırken, katılımcı sayısı için min ve maks sınır belirlenmesi testi
+      Given visitor anasayfaya gider
+      Then login butonuna tıklar ve loginUrl sayfasına yönlendirilir
+      When "kerem.teacher@instulearn.com" ve password kutusuna geçerli bilgileri girer
+      And login butonuna basar ve "Teacher" Panel' "https://qa.instulearn.com/panel" sayfasına yönlendirilir
+      Then instructor Dashboard sidebarında Meetings linkini görür ve tıklar
+      And meetings linkinin altında yer alan Settings linkine tiklar ve ilgili sayfaya yonlendirilir
+      And sayfada group alanını görür ve yüz yüze toplantılarını bir switch yardımı ile ayarlar.
+      Then online grup toplantılarını ; Online Group Meeting Options başlığı altında saatlik ücret, minimum ve maksimum öğrencilere ait üç text alanı ile planlar
+      And online grup toplantılarını ; In-person Group Meeting Options başlığı altında saatlik ücret, minimum ve maksimum öğrencilere ait üç text alanı ile planlar
+      Then dashboard sidebard'da yer alan Logout linkine tıklar
+
+
+    @kerem_024
+    Scenario: TC_24.11 Instructor'ın toplantı sayfasında, grup toplantılarını düzenleme ekranında kaydet butonun görünürlüğü ve aktif olması testi
+      Given visitor anasayfaya gider
+      Then login butonuna tıklar ve loginUrl sayfasına yönlendirilir
+      When "kerem.teacher@instulearn.com" ve password kutusuna geçerli bilgileri girer
+      And login butonuna basar ve "Teacher" Panel' "https://qa.instulearn.com/panel" sayfasına yönlendirilir
+      Then instructor Dashboard sidebarında Meetings linkini görür ve tıklar
+      And meetings linkinin altında yer alan Settings linkine tiklar ve ilgili sayfaya yonlendirilir
+      And sayfada tüm ayarları kayıt edeceği Save butonunu görür ve tıklar ve kaydın olduğunu doğrular
       Then dashboard sidebard'da yer alan Logout linkine tıklar
 
