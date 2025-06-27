@@ -147,6 +147,16 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="(//*[contains(text(), 'Support')])[1]")
     public WebElement supportBasligi;
 
+    @FindBy(xpath ="//*[@id='supportCollapse']/ul/li[1]/a")
+    public WebElement newBasligi;
+
+    @FindBy(xpath ="//*[@id='supportCollapse']/ul/li[2]/a")
+    public WebElement coursesSupportBasligi;
+
+    @FindBy(xpath ="//*[@id='supportCollapse']/ul/li[3]/a")
+    public WebElement ticketsBasligi;
+
+
 
 
 
