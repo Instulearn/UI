@@ -1,7 +1,5 @@
 package pages;
 
-
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -170,6 +168,80 @@ public class OmerPage extends BasePage {
 
     @FindBy(xpath = "//*[@Class='custom-select ']")
     public WebElement categoryCheckBox;
+
+    @FindBy(xpath = "//*[@Class='custom-control-input']")
+    public WebElement enableSubscribeButton;
+
+    @FindBy(xpath = "//*[@name='access_days']")
+    public WebElement accessPeriodTextBox;
+
+    @FindBy(xpath = "//*[@name='price']")
+    public WebElement priceTextBox;
+
+    @FindBy(xpath = "//*[@Class='btn btn-primary btn-sm mt-15']")
+    public WebElement addCourseButton;
+
+    @FindBy(xpath = "(//*[@Class='select2-selection__rendered'])[1]")
+    public WebElement selectaCourseCheckBox;
+
+    @FindBy(xpath = "//*[@Class='js-save-bundleWebinar btn btn-sm btn-primary']")
+    public WebElement contentBaslıgıSaveButton;
+
+    @FindBy(xpath = "//*[@Class='select2-results__option select2-results__option--selectable select2-results__option--selected select2-results__option--highlighted']")
+    public WebElement yazılımOgreniyorumText;
+
+    @FindBy(xpath = "//*[@Class='btn btn-primary btn-sm mt-15']")
+    public WebElement newFAQButton;
+
+    @FindBy(xpath = "(//*[@Class='js-ajax-title form-control'])[1]")
+    public WebElement faqTitleTextBox;
+
+    @FindBy(xpath = "(//*[@Class='js-ajax-answer form-control'])[1]")
+    public WebElement answerTextBox;
+
+    @FindBy(xpath = "(//*[@Class='js-save-faq btn btn-sm btn-primary'])[1]")
+    public WebElement faqSaveButton;
+
+    @FindBy(xpath = "//*[@Class='custom-control custom-switch']")
+    public WebElement ıAgreeButton;
+
+    @FindBy(xpath = "//*[@Class='btn btn-sm btn-primary']")
+    public WebElement sendForReview;
+
+    @FindBy(xpath = "//*[@name='message_for_reviewer']")
+    public WebElement messageToReviewerTextBox;
+
+    @FindBy(xpath = "//a[@href='/panel/bundles']")
+    public WebElement myBundlesLink;
+
+    @FindBy(xpath = "//*[@Class='font-16 text-dark-blue font-weight-bold']")
+    public WebElement kursBaşlığı;
+
+    @FindBy(xpath = "(//*[@Class='webinar-actions d-block mt-10'])[1]")
+    public WebElement myBundlesEditButton;
+
+    @FindBy(xpath = "(//*[@Class='webinar-actions d-block mt-10'])[2]")
+    public WebElement myBundlesCoursesButton;
+
+    @FindBy(xpath = "(//*[@Class='webinar-actions d-block mt-10'])[3]")
+    public WebElement myBundlesExportStudentsListButton;
+
+    @FindBy(xpath = "//*[@Class='webinar-actions d-block mt-10 text-danger delete-action']")
+    public WebElement myBundlesDeleteButton;
+
+    @FindBy(xpath = "//*[@Class='btn-transparent dropdown-toggle']")
+    public WebElement myBundlesÜcNokta;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
