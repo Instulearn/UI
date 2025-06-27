@@ -4,11 +4,17 @@ import drivers.DriverManager;
 import io.cucumber.java.en.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.KeremPage;
 import utils.ReusableMethods;
+
+import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -327,5 +333,143 @@ public class US_024 {
         logger.info("'Cancel' butonuna tıklanarak meeting işlemi iptal ediliyor.");
         keremPage.finishMeetingPageCancelButton.click();
         logger.info("Finish Meeting işlemi iptal edildi, kayıt open mod'da bırakıldı.");
+    }
+
+    @And("meetings linkinin altında yer alan Settings linkine tiklar ve ilgili sayfaya yonlendirilir")
+    public void meetingsLinkininAltındaYerAlanSettingsLinkineTiklar() {
+        logger.info("'Settings' linkinin görünür olduğu kontrol ediliyor.");
+        assertTrue(keremPage.instructorMeetingsSettingsLinki.isDisplayed());
+        logger.info("'Settings' linki görünür durumda.");
+
+        logger.info("'Settings' linkine tıklanıyor.");
+        keremPage.instructorMeetingsSettingsLinki.click();
+
+        String expectedUrl = "https://qa.instulearn.com/panel/meetings/settings";
+        String actualUrl = driver.getCurrentUrl();
+        logger.info("Settings sayfa URL'si kontrol ediliyor. Beklenen: " + expectedUrl + ", Gerçek: " + actualUrl);
+
+        assertEquals(actualUrl, expectedUrl);
+        logger.info("Settings sayfasına başarıyla yönlendirildi.");
+    }
+
+
+    @And("sayfada My timesheet alanını görür ve toplantı günlerini ayarlayacağı buton ‘Actions’ başlığı altında Add Time bağlantısı ile ayarlanır")
+    public void sayfadaMyTimesheetAlanınıGörürVeToplantıGünleriniAyarlayacağıButonActionsBaşlığıAltındaAddTimeBağlantısıIleAyarlanır() {
+        logger.info("Timesheet alanı görüntüleniyor.");
+        assertTrue(keremPage.myTimesheetAlani.isDisplayed());
+        logger.info("Timesheet alanı görüntülendi.");
+
+        logger.info("Action butonu kontrol ediliyor.");
+        assertTrue(keremPage.actionButtonTimesheet.isDisplayed());
+        logger.info("Action butonu görüntülendi.");
+
+        logger.info("Add Time (Saturday) butonu kontrol ediliyor.");
+        assertTrue(keremPage.addTimeButtonSaturday.isDisplayed());
+        assertTrue(keremPage.addTimeButtonSaturday.isEnabled());
+        logger.info("Add Time (Saturday) butonu görüntülendi ve aktif.");
+
+        keremPage.addTimeButtonSaturday.click();
+        logger.info("Add Time (Saturday) butonuna tıklandı.");
+        ReusableMethods.bekle(1);
+
+        logger.info("Saat simgesi (Add Time ekranı) kontrol ediliyor.");
+        assertTrue(keremPage.saatIkonu.isDisplayed());
+        logger.info("Add Time ekranı başarıyla açıldı.");
+
+        keremPage.addTimeSaveButonu.click();
+        logger.info("Save butonuna tıklandı.");
+
+        // "Success" toast mesajı başlığını doğrula
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebElement successTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//*[contains(text(),'Success')]")));
+        assertTrue(successTitle.isDisplayed());
+        logger.info("Başlık doğrulandı: 'Success' toast mesajı görüntülendi.");
+    }
+
+    @And("sayfada In-person meetings alanını görür ve yüz yüze toplantılarını bir switch yardımı ile ayarlar.")
+    public void sayfadaInPersonMeetingsAlanınıGörürVeYüzYüzeToplantılarınıBirSwitchYardımıIleAyarlar() {logger.info("In-person meetings alanı kontrol ediliyor.");
+        assertTrue(keremPage.inPersonMeetingText.isDisplayed());
+        logger.info("In-person meetings alanı görüntülendi.");
+
+        logger.info("Switch butonuna tıklanıyor (yüz yüze toplantılar için).");
+        keremPage.inPersonMeetingSwitch.click();
+        ReusableMethods.bekle(2);
+        logger.info("Switch işlemi başarıyla gerçekleştirildi.");
+    }
+
+    @Then("yüz yüze görüşmelerini; saatlik ücret, minimum ve maksimum öğrencilere ait üç text alanı ile planlar")
+    public void yüzYüzeGörüşmeleriniSaatlikÜcretMinimumVeMaksimumÖğrencilereAitÜçTextAlanıIlePlanlar() {
+        logger.info("Saatlik ücret, minimum ve maksimum öğrenci alanları kontrol ediliyor.");
+
+        assertTrue("Saatlik ücret alanı görüntülenemedi.", keremPage.inPersonHourlyPrice.isDisplayed());
+        logger.info("Saatlik ücret text alanı görüntülendi.");
+
+        String pageText = keremPage.instructorMeetingSettingsBuyukAlan.getText().toLowerCase();
+        logger.info("Büyük alandaki metin alındı: " + pageText);
+
+        assertTrue("'minimum student' yazısı bulunamadı.", pageText.contains("minimum student"));
+        logger.info("'minimum student' yazısı sayfada bulundu.");
+
+        assertTrue("'maximum student' yazısı bulunamadı.", pageText.contains("maximum student"));
+        logger.info("'maximum student' yazısı sayfada bulundu.");
+
+    }
+
+    @And("sayfada group alanını görür ve yüz yüze toplantılarını bir switch yardımı ile ayarlar.")
+    public void sayfadaGroupAlanınıGörürVeYüzYüzeToplantılarınıBirSwitchYardımıIleAyarlar() {
+        logger.info("Group Meeting alanı kontrol ediliyor.");
+        assertTrue(keremPage.groupMeetingText.isDisplayed());
+        logger.info("Group Meeting alanı görüntülendi.");
+
+        logger.info("Group Meeting switch alanı kontrol ediliyor.");
+        assertTrue(keremPage.groupMeetingSwitch.isDisplayed());
+
+        keremPage.groupMeetingSwitch.click();
+        logger.info("Group Meeting switch tıklandı.");
+    }
+
+    @Then("online grup toplantılarını ; Online Group Meeting Options başlığı altında saatlik ücret, minimum ve maksimum öğrencilere ait üç text alanı ile planlar")
+    public void onlineGrupToplantılarınıOnlineGroupMeetingOptionsBaşlığıAltındaSaatlikÜcretMinimumVeMaksimumÖğrencilereAitÜçTextAlanıIlePlanlar() {
+        logger.info("Group Meeting Minimum Student alanı kontrol ediliyor.");
+        assertTrue(keremPage.groupMeetinMinStudent.isDisplayed());
+        assertTrue(keremPage.groupMeetinMinStudent.isEnabled());
+        logger.info("Group Meeting Minimum Student alanı görüntülendi ve aktif.");
+
+        logger.info("Group Meeting Maximum Student alanı kontrol ediliyor.");
+        assertTrue(keremPage.groupMeetinMaxStudent.isDisplayed());
+        assertTrue(keremPage.groupMeetinMaxStudent.isEnabled());
+        logger.info("Group Meeting Maximum Student alanı görüntülendi ve aktif.");
+
+        logger.info("Online Group Hourly Price alanı kontrol ediliyor.");
+        assertTrue(keremPage.onlineGroupHourlyPrice.isDisplayed());
+        assertTrue(keremPage.onlineGroupHourlyPrice.isEnabled());
+        logger.info("Online Group Hourly Price alanı görüntülendi ve aktif.");
+
+    }
+
+    @And("online grup toplantılarını ; In-person Group Meeting Options başlığı altında saatlik ücret, minimum ve maksimum öğrencilere ait üç text alanı ile planlar")
+    public void onlineGrupToplantılarınıInPersonGroupMeetingOptionsBaşlığıAltındaSaatlikÜcretMinimumVeMaksimumÖğrencilereAitÜçTextAlanıIlePlanlar() {
+        logger.info("In Person Group Minimum Student alanı kontrol ediliyor.");
+        assertTrue(keremPage.groupMeetinInPersonMinStudent.isDisplayed());
+        assertTrue(keremPage.groupMeetinInPersonMinStudent.isEnabled());
+        logger.info("In Person Group Minimum Student alanı görüntülendi ve aktif.");
+
+        logger.info("In Person Group Maximum Student alanı kontrol ediliyor.");
+        assertTrue(keremPage.groupMeetinInPersonMaxStudent.isDisplayed());
+        assertTrue(keremPage.groupMeetinInPersonMaxStudent.isEnabled());
+        logger.info("In Person Group Maximum Student alanı görüntülendi ve aktif.");
+
+        logger.info("In Person Group Hourly Price alanı kontrol ediliyor.");
+        assertTrue(keremPage.inPersonGroupHourlyPrice.isDisplayed());
+        assertTrue(keremPage.inPersonGroupHourlyPrice.isEnabled());
+        logger.info("In Person Group Hourly Price alanı görüntülendi ve aktif.");
+    }
+
+    @And("sayfada tüm ayarları kayıt edeceği Save butonunu görür ve tıklar ve kaydın olduğunu doğrular")
+    public void sayfadaTümAyarlarıKayıtEdeceğiSaveButonunuGörürVeTıklarVeKaydınOlduğunuDoğrular() {
+        logger.info("Settings sayfasındaki Save butonunun görünür ve aktif olduğu doğrulanıyor.");
+        assertTrue(keremPage.settingsPageSaveButton.isDisplayed() && keremPage.settingsPageSaveButton.isEnabled());
+        logger.info("Save butonu görünür ve aktiftir.");
     }
 }

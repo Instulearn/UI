@@ -250,6 +250,66 @@ public class KeremPage extends BasePage{
     @FindBy(xpath = "//*[text()='Cancel']")
     public WebElement finishMeetingPageCancelButton;
 
+    @FindBy(xpath = "(//*[text()='Settings'])[1]")
+    public WebElement instructorMeetingsSettingsLinki;
+
+    @FindBy(xpath = "(//*[@class='row'])[1]")
+    public WebElement myTimesheetAlani;
+
+    @FindBy(xpath = "//*[@class='btn-group dropdown table-actions']")
+    public WebElement actionButtonTimesheet;
+
+    @FindBy(xpath = "(//*[text()='Add Time'])[1]")
+    public WebElement addTimeButtonSaturday;
+
+    @FindBy(xpath = "//*[@class='clockpicker-dial clockpicker-minutes']")
+    public WebElement saatIkonu;
+
+    @FindBy(xpath = "(//*[text()='Save'])[2]")
+    public WebElement addTimeSaveButonu;
+
+    @FindBy(xpath = "(//*[@class='section-title after-line'])[2]")
+    public WebElement inPersonMeetingText;
+
+    @FindBy(xpath = "(//*[@class='custom-control custom-switch'])[2]")
+    public WebElement inPersonMeetingSwitch;
+
+    @FindBy(xpath = "//*[@name='in_person_amount']")
+    public WebElement inPersonHourlyPrice;
+
+    @FindBy(xpath = "//*[@class='panel-content']")
+    public WebElement instructorMeetingSettingsBuyukAlan;//*[@class='panel-content']
+
+    @FindBy(xpath = "(//*[@class='section-title after-line'])[3]")
+    public WebElement groupMeetingText;
+
+    @FindBy(xpath = "(//*[@class='custom-control custom-switch'])[3]")
+    public WebElement groupMeetingSwitch;
+
+    @FindBy(xpath = "//*[@name='online_group_min_student']")
+    public WebElement groupMeetinMinStudent;
+
+    @FindBy(xpath = "//*[@name='online_group_max_student']")
+    public WebElement groupMeetinMaxStudent;
+
+    @FindBy(xpath = "//*[@name='online_group_amount']")
+    public WebElement onlineGroupHourlyPrice;
+
+    @FindBy(xpath = "//*[@name='in_person_group_min_student']")
+    public WebElement groupMeetinInPersonMinStudent;
+
+    @FindBy(xpath = "//*[@name='in_person_group_max_student']")
+    public WebElement groupMeetinInPersonMaxStudent;
+
+    @FindBy(xpath = "//*[@name='in_person_group_amount']")
+    public WebElement inPersonGroupHourlyPrice;
+
+    @FindBy(xpath = "//*[text()='Save']")
+    public WebElement settingsPageSaveButton;
+
+
+
+
 
 
 
