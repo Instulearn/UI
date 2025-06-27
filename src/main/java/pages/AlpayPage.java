@@ -126,6 +126,9 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[@id= 'billingCountry']")
     public WebElement billingCountry;
 
+    @FindBy(xpath ="//*[@id='billingPostalCode']")
+    public WebElement billingPostalCode;
+
     @FindBy(xpath ="//*[@class='SubmitButton-IconContainer']")
     public WebElement submitButton;
 
@@ -156,8 +159,29 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[@id='supportCollapse']/ul/li[3]/a")
     public WebElement ticketsBasligi;
 
+    @FindBy(xpath ="(//*[@type='text'])[1]")
+    public WebElement subjectTextArea;
 
+    @FindBy(xpath ="//*[@id='supportType']")
+    public WebElement typeDropdown;
 
+    @FindBy(xpath ="//*[@id='departments']")
+    public WebElement department;
+
+    @FindBy(xpath ="//*[@name='message']")
+    public WebElement messageTextArea;
+
+    @FindBy(xpath ="//*[@id='attach']")
+    public WebElement attachTextArea;
+
+    @FindBy(xpath ="//*[@type='submit']")
+    public WebElement sendMessage;
+
+    @FindBy(xpath ="//*[contains(text(), 'Waiting')]")
+    public WebElement waitingText;
+
+    @FindBy(xpath ="//*[contains(text(), 'Log out')]")
+    public WebElement logOut;
 
 
 }
