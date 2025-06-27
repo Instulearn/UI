@@ -72,7 +72,6 @@ public class US_046 {
         ReusableMethods.bekle(2);
     }
 
-
     @Given("Message yazilir")
     public void message_yazilir() {
 
@@ -96,6 +95,22 @@ public class US_046 {
         alpayPage.logOut.click();
         assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/");
         ReusableMethods.bekle(3);
+    }
+
+    @Given("Courses support alt basligina tiklanir")
+    public void courses_alt_basligina_tiklanir(){
+        alpayPage.coursesSupportBasligi.click();
+        assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/panel/support");
+        ReusableMethods.bekle(3);
+    }
+
+    @Given("Ekrandaki board ogeleri kontrol edilir")
+    public void ekrandaki_board_ogeleri_kontrol_edilir(){
+        assertTrue(alpayPage.openConversations.isDisplayed());
+        assertTrue(alpayPage.closedConversations.isDisplayed());
+        assertTrue(alpayPage.totalConversations.isDisplayed());
+        ReusableMethods.bekle(2);
+
     }
 
 

@@ -183,5 +183,14 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[contains(text(), 'Log out')]")
     public WebElement logOut;
 
+    @FindBy(xpath ="//*[contains(text(), 'Open conversations')]")
+    public WebElement openConversations;
+
+    @FindBy(xpath ="//*[contains(text(), 'Closed conversations')]")
+    public WebElement closedConversations;
+
+    @FindBy(xpath ="//*[contains(text(), 'Total conversations')]")
+    public WebElement totalConversations;
+
 
 }
