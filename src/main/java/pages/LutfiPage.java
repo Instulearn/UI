@@ -243,10 +243,10 @@ public class LutfiPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class, 'product-show-price-box')]//span[contains(@class, 'real')]")
     public WebElement inProductPrice;
 
-    @FindBy(xpath = "//button[contains(text(), 'Add to Cart')]")
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
     public WebElement addToCartButton;
 
-    @FindBy(xpath = "//button[contains(text(), 'Buy now!')]")
+    @FindBy(xpath = "//button[@class='btn btn-outline-danger mt-20 ml-0 ml-md-10 js-product-direct-payment']")
     public WebElement buyNowButton;
 
     @FindBy(xpath = "//textarea[@name='review_text']")
@@ -290,6 +290,73 @@ public class LutfiPage extends BasePage {
 
     @FindBy(xpath = "(//button[text()='Close'])[2]")
     public WebElement certificateIsValidScreenCloseButton;
+
+    @FindBy(xpath = "//*[text()='Home']")
+    public WebElement dashboardHomeButton;
+
+    @FindBy(xpath = "//*[text()='Store']")
+    public WebElement homePageStoreButton;
+
+    @FindBy(xpath = "//h3[text()='Options']")
+    public WebElement productsFilterOptionsSide;
+
+    @FindBy(xpath = "(//*[text()='Only available products']")
+    public WebElement onlyAvailableCB;
+
+    @FindBy(xpath = "(//div[@class='image-box'])[1]")
+    public WebElement firstFilteredProduct;
+
+    @FindBy(xpath = "(//h3[@class='mt-15 product-title font-weight-bold font-16 text-dark-blue'])[1]")
+    public WebElement firstFilteredProductProdName;
+
+    @FindBy(xpath = "(//a[@class='user-name ml-5 font-14'])[1]")
+    public WebElement firstFilteredProductSellerName;
+
+    @FindBy(xpath = "(//a[@class='text-decoration-underline'])[1]")
+    public WebElement firstFilteredProductCategoryName;
+
+    @FindBy(xpath = "//a[@id='description-tab']")
+    public WebElement descriptionPart;
+
+    @FindBy(xpath = "//div[@class='stars-card d-flex align-items-center mt-0']")
+    public WebElement productPoint;
+
+    @FindBy(xpath = "//*[text()='Comments ']")
+    public WebElement productCommentsTitle;
+
+    @FindBy(xpath = "//textarea[@name='comment']")
+    public WebElement productCommentsTextArea;
+
+    @FindBy(xpath = "//*[text()='Post comment']")
+    public WebElement productPostCommentButton;
+
+
+    @FindBy(xpath = "//h2[text()='Comment sent successfully!']")
+    public WebElement productSuccessSend;
+
+    @FindBy(xpath = "//h1[text()='Shopping Cart']")
+    public WebElement shoppingCartTitle;
+
+    @FindBy(xpath = "//h3[text()='Painting tools']")
+    public WebElement cartPaintingTitle;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
