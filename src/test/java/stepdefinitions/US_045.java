@@ -34,16 +34,18 @@ public class US_045 {
 
         ReusableMethods.bekle(3);
     }
+
     @Given("Financial Summary baglantisina tiklanir ve ilgili sayfanin yuklendigi kontrol edilir")
     public void financial_summary_baglantisina_tiklanir() {
 
         WebElement financialSummary = new AlpayPage(driver).financialSummary;
         financialSummary.click();
-        assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/panel/financial/summary");
+        assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/panel/financial/summary");
 
         ReusableMethods.bekle(3);
 
     }
+
     @Given("Payout baglantisina tiklanir ve henuz tanimli bir hesap yoksa davranis kontrol edilir")
     public void payout_baglantisina_tiklanir_ve_henuz_tanimli_bir_hesap_yoksa_davranis_kontrol_edilir() {
 
@@ -58,6 +60,7 @@ public class US_045 {
 
 
     }
+
     @Given("Ayarlar sayfasindan hesap tanimlanir")
     public void ayarlar_sayfasindan_hesap_tanimlanir() {
 
@@ -109,14 +112,14 @@ public class US_045 {
         WebElement chargeAccount = new AlpayPage(driver).chargeAccount;
         WebElement financialBaslik = new AlpayPage(driver).financialBaslik;
 
-        if(!chargeAccount.isDisplayed()){
+        if (!chargeAccount.isDisplayed()) {
             financialBaslik.click();
         }
 
         ReusableMethods.bekle(3);
         chargeAccount.click();
 
-        assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/panel/financial/account");
+        assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/panel/financial/account");
 
         ReusableMethods.bekle(3);
     }
@@ -134,10 +137,11 @@ public class US_045 {
         WebElement billingName = new AlpayPage(driver).billingName;
         WebElement billingCountry = new AlpayPage(driver).billingCountry;
         WebElement submitButton = new AlpayPage(driver).submitButton;
+        WebElement billingPostalCode = new AlpayPage(driver).billingPostalCode;
 
         stripeButton.click();
         ReusableMethods.bekle(3);
-        amount.sendKeys("100");
+        amount.sendKeys("1000");
         payButton.click();
         ReusableMethods.bekle(3);
 
@@ -155,7 +159,13 @@ public class US_045 {
         billingName.sendKeys("Tester Name");
         ReusableMethods.bekle(2);
         Select select = new Select(billingCountry);
-        select.selectByVisibleText("Turkey");
+        if (select.getFirstSelectedOption().getText().equals("United Kingdom")){
+            billingPostalCode.sendKeys("SE17 1DT");
+        }
+        if(select.getFirstSelectedOption().getText().equals("United States")){
+            billingPostalCode.sendKeys("20500");
+        }
+
         ReusableMethods.bekle(2);
         submitButton.click();
         ReusableMethods.bekle(6);
@@ -164,16 +174,18 @@ public class US_045 {
 
         ReusableMethods.bekle(4);
     }
+
     @Given("Subscribe baglantisina tiklanir")
     public void subscribe_baglantisina_tiklanir() {
 
         WebElement subscribe = new AlpayPage(driver).subscribe;
         subscribe.click();
         ReusableMethods.bekle(4);
-        assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/panel/financial/subscribes");
+        assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/panel/financial/subscribes");
 
 
     }
+
     @Given("Yeni bir uyelik plani secilip olusturulur")
     public void yeni_bir_uyelik_plani_secilip_olusturulur() {
 
@@ -182,7 +194,7 @@ public class US_045 {
         WebElement paymentSubmit = new AlpayPage(driver).paymentSubmit;
         WebElement activePlan = new AlpayPage(driver).activePlan;
 
-        if (!activePlan.isDisplayed()){
+        if (!activePlan.isDisplayed()) {
             JSUtilities.scrollToBottom(driver);
             purchase.click();
             ReusableMethods.bekle(4);
@@ -190,10 +202,9 @@ public class US_045 {
             ReusableMethods.bekle(3);
             paymentSubmit.click();
             ReusableMethods.bekle(3);
-            assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/payments/status");
+            assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/payments/status");
 
-        }
-        else {
+        } else {
             ReusableMethods.bekle(3);
         }
     }
