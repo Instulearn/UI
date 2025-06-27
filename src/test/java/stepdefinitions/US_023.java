@@ -110,4 +110,152 @@ public class US_023 {
     public void dıgıtal_marketing_linkine_tıklanır() {
         omerPage.categoryCheckBox.sendKeys("Digital Marketing");
     }
+
+    @Then("ilgili sayfaya gider")
+    public void ilgili_sayfaya_gider() {
+        driver.get("https://qa.instulearn.com/panel/bundles/99/step/3");
+    }
+    @Then("enable subscribe button'a tıklar")
+    public void enable_subscribe_button_a_tıklar() {
+        WebElement button = driver.findElement(By.xpath("//*[@Class='custom-control-input']"));
+
+        actions.moveToElement(button).click().perform();
+    }
+    @Then("access period text box'a ilgili data girilir")
+    public void access_period_text_box_a_ilgili_data_girilir() {
+        omerPage.accessPeriodTextBox.sendKeys("10");
+        ReusableMethods.bekle(1);
+    }
+    @Then("price text box'a ilgili data girilir")
+    public void price_$_text_box_a_ilgili_data_girilir() {
+        omerPage.priceTextBox.sendKeys("150");
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("add course butonuna tıklar")
+    public void add_course_butonuna_tıklar() {
+        omerPage.addCourseButton.click();
+        ReusableMethods.bekle(1);
+    }
+    @Then("açılan sayfada select a course text box'ına ilgili data girilir")
+    public void açılan_sayfada_select_a_course_text_box_ına_ilgili_data_girilir() {
+        omerPage.selectaCourseCheckBox.click();
+        ReusableMethods.bekle(1);
+        omerPage.yazılımOgreniyorumText.click();
+        ReusableMethods.bekle(1);
+    }
+    @Then("save butonuna tıklar")
+    public void save_butonuna_tıklar() {
+        omerPage.contentBaslıgıSaveButton.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("ilgili sayfa content e gider")
+    public void ilgili_sayfa_content_e_gider() {
+       driver.get("https://qa.instulearn.com/panel/bundles/99/step/4");
+       ReusableMethods.bekle(1);
+    }
+
+    @Then("FAQ sayfasına gider")
+    public void faq_sayfasına_gider() {
+        driver.get("https://qa.instulearn.com/panel/bundles/99/step/5");
+        ReusableMethods.bekle(1);
+    }
+    @Then("new faq butonuna tıklanır")
+    public void new_faq_butonuna_tıklanır() {
+        omerPage.newFAQButton.click();
+        ReusableMethods.bekle(1);
+    }
+    @Then("title text box'a ilgili data girilir")
+    public void title_text_box_a_ilgili_data_girilir() {
+        omerPage.faqTitleTextBox.sendKeys("Kurs yakında başlıyor!");
+        ReusableMethods.bekle(1);
+    }
+    @Then("answer text box'a ilgili data girilir")
+    public void answer_text_box_a_ilgili_data_girilir() {
+        omerPage.answerTextBox.sendKeys("10 gün içerisinde kurs başlıyor");
+        ReusableMethods.bekle(1);
+    }
+    @Then("faq save butonuna tıklanır")
+    public void faq_save_butonuna_tıklanır() {
+        omerPage.faqSaveButton.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("message to reviewer sayfasına gidilir")
+    public void message_to_reviewer_sayfasına_gidilir() {
+        driver.get("https://qa.instulearn.com/panel/bundles/99/step/6");
+        ReusableMethods.bekle(1);
+    }
+    @Then("message to reviewer text box'ına ilgili data girilir")
+    public void message_to_reviewer_text_box_ına_ilgili_data_girilir() {
+        omerPage.messageToReviewerTextBox.sendKeys("Merhaba ben Turgut");
+        ReusableMethods.bekle(1);
+    }
+    @Then("I agree with terms & rules butona tıklanır")
+    public void ı_agree_with_terms_rules_butona_tıklanır() {
+        omerPage.ıAgreeButton.click();
+        ReusableMethods.bekle(1);
+    }
+    @Then("send for review butona tıklanır")
+    public void send_for_review_butona_tıklanır() {
+        omerPage.sendForReview.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("course bundles başlığına tıklar")
+    public void course_bundles_başlığına_tıklar() {
+      omerPage.courseBundlesButton.click();
+      ReusableMethods.bekle(1);
+    }
+    @Then("açılan menüde my bundles başlığına tıklar")
+    public void açılan_menüde_my_bundles_başlığına_tıklar() {
+
+        omerPage.myBundlesLink.click();
+        ReusableMethods.bekle(2);
+    }
+    @Then("cucumber lesson {int} adlı paket görüntüler ve doğrular")
+    public void cucumber_lesson_adlı_paket_görüntüler_ve_doğrular(Integer int1) {
+        Assert.assertEquals(omerPage.kursBaşlığı.getText(),"Cucumber Lesson 1");
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("course bundles menü başlığına tıklar")
+    public void course_bundles_menü_başlığına_tıklar() {
+        omerPage.courseBundlesButton.click();
+        ReusableMethods.bekle(1);
+    }
+    @Then("açılan menüde ki my bundles link başlığının görünürlüğünü doğrular")
+    public void açılan_menüde_ki_my_bundles_link_başlığının_görünürlüğünü_doğrular() {
+        Assert.assertEquals(omerPage.myBundlesLink.getText(),"My Bundles");
+        ReusableMethods.bekle(1);
+    }
+
+
+    @Then("course bölümünün sol üstteki {int} noktaya tıklar")
+    public void course_bölümünün_sol_üstteki_noktaya_tıklar(Integer int1) {
+        omerPage.myBundlesÜcNokta.click();
+        ReusableMethods.bekle(1);
+    }
+    @Then("açılan sayfada edit linkinin görünürlüğünü test eder")
+    public void açılan_sayfada_edit_linkinin_görünürlüğünü_test_eder() {
+        Assert.assertTrue(omerPage.myBundlesEditButton.isDisplayed());
+        ReusableMethods.bekle(1);
+    }
+    @Then("courses linkinin görünürlüğünü test eder")
+    public void courses_linkinin_görünürlüğünü_test_eder() {
+        Assert.assertTrue(omerPage.myBundlesCoursesButton.isDisplayed());
+        ReusableMethods.bekle(1);
+    }
+    @Then("export students list linkinin görünürlüğünü test eder")
+    public void export_students_list_linkinin_görünürlüğünü_test_eder() {
+        Assert.assertTrue(omerPage.myBundlesExportStudentsListButton.isDisplayed());
+        ReusableMethods.bekle(1);
+    }
+    @Then("delete linkinin görünürlüğünü test eder")
+    public void delete_linkinin_görünürlüğünü_test_eder() {
+        Assert.assertTrue(omerPage.myBundlesDeleteButton.isDisplayed());
+        ReusableMethods.bekle(1);
+    }
+
 }
