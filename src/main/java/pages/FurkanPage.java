@@ -333,51 +333,7 @@ public class FurkanPage extends BasePage {
 
     @Getter
     @FindBy(xpath = "//button[contains(text(),'Save') or contains(text(),'Create') or contains(text(),'Submit')]")
-
     private WebElement saveButton;
-
-    public WebElement saveButton;  // Eğer sayfada formu kaydeden buton varsa
-
-    // Alternatif olarak, formu submit eden buton yoksa, form elementini yakalayıp submit edebilirsin:
-    @FindBy(xpath = "//form[contains(@id,'newQuizForm') or contains(@id,'form')]")
-    public WebElement newQuizForm;
-
-    @FindBy(xpath = "//button[@id='add_multiple_question']")
-    public WebElement addMultipleChoiceButton;
-
-    @FindBy(xpath = "//input[contains(@class,'js-question-title') or @name='question_title']")
-    public WebElement questionTitleInput;
-
-    @FindBy(xpath = "//input[contains(@class,'js-question-grade') or @name='grade']")
-    public WebElement gradeInput;
-
-    @FindBy(xpath = "//input[contains(@class,'js-correct-answer') or contains(@name,'correct_answer')]")
-    public WebElement correctAnswerInput;
-
-    // Çoklu seçenek eklemek için örnek olarak seçenek inputları
-    @FindBy(xpath = "//input[contains(@class,'js-question-option') or contains(@name,'option')]")
-    public List<WebElement> questionOptionsInputs;
-
-
-
-    // Yeni seçenek eklemek için eğer varsa buton
-    @FindBy(xpath = "//button[contains(text(),'Add option') or contains(text(),'Add choice')]")
-    public WebElement addOptionButton;
-
-
-
-
-
-
-
-
-
-    @FindBy(xpath = "//button[@id='add_descriptive_question']")
-    public WebElement addDescriptiveButton;
-
-    @FindBy(xpath = "//textarea[contains(@class,'js-description-correct-answer') or contains(@name,'correct_answer_description')]")
-    public WebElement descriptionCorrectAnswerTextarea;
-
 
     @Getter
     @FindBy(xpath = "//button[contains(text(),'Save') or contains(text(),'Add Question')]")
