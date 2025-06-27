@@ -19,6 +19,7 @@ public class US_04 {
     WebDriver driver = DriverManager.getDriver();
     BasePage basePage = new BasePage(driver);
     RegisterPage registerPage = new RegisterPage(driver);
+    ReusableMethods reusableMethods = new ReusableMethods();
     String email2="";
 
     @When("Register butona tiklanir")
@@ -67,14 +68,14 @@ public class US_04 {
     public void yönlendirilen_sayfada_full_name_alanina_yazilan_ismin_görüldügü_dogrulanir() {
         LoggerHelper.info("Basarili sekilde register olunabildigi dogrulaniyor");
         Allure.step("Basarili sekilde register olunabildigi dogrulaniyor");
-        Assert.assertTrue(registerPage.isWebElementDisplayed(registerPage.getUserName()),"Register islemi basarili sekilde gerceklesemedi");
+        Assert.assertTrue(reusableMethods.isWebElementDisplayed(registerPage.getUserName()),"Register islemi basarili sekilde gerceklesemedi");
     }
 
     @Given("Register butonunun görünürlügü dogrulanir")
     public void register_butonunun_görünürlügü_dogrulanir() {
         LoggerHelper.info("Register butonunun görünürlügü dogrulaniyor");
         Allure.step("Register butonunun görünürlügü dogrulaniyor");
-        Assert.assertTrue(registerPage.isWebElementDisplayed(registerPage.getRegisterButton()),"Register butonunun görünürlügü dogrulanamadi");
+        Assert.assertTrue(reusableMethods.isWebElementDisplayed(registerPage.getRegisterButton()),"Register butonunun görünürlügü dogrulanamadi");
     }
 
     @Then("Register butonuna tiklandiginda acilan sayfanin URL'inde 'register' kelimesinin yer aldigi dogrulanir")
@@ -88,7 +89,7 @@ public class US_04 {
     public void sayfanin_solunda_yer_alan_resmin_görünürlügü_dogrulanir() {
         LoggerHelper.info("Register sayfasinin solunda yer alan resmin görünürlügü dogrulaniyor");
         Allure.step("Register sayfasinin solunda yer alan resmin görünürlügü dogrulaniyor");
-        Assert.assertTrue(registerPage.isWebElementDisplayed(registerPage.getPhoto()),"Register sayfasindaki resmin görünürlügü dogrulanamadi");
+        Assert.assertTrue(reusableMethods.isWebElementDisplayed(registerPage.getPhoto()),"Register sayfasindaki resmin görünürlügü dogrulanamadi");
     }
 
     @Then("Sayfanin saginda yer alan signup formunun görünürlügü dogrulanir")
@@ -138,7 +139,7 @@ public class US_04 {
         LoggerHelper.info("Uyari mesajinin görüntülendigi dogrulaniyor");
         Allure.step("Uyari mesajinin görüntülendigi dogrulaniyor");
         for (WebElement element : registerPage.getErrormessages()){
-            Assert.assertTrue(element.isDisplayed(),"Uyari mesajinin görüntülendigi dogrulanamadi");
+            Assert.assertTrue(reusableMethods.isWebElementDisplayed(element),"Uyari mesajinin görüntülendigi dogrulanamadi");
         }
     }
 
@@ -146,7 +147,7 @@ public class US_04 {
     public void i_agree_with_terms_rules_alaninin_altinda_mesajinin_yer_aldigi_dogrulanir(String string) {
         LoggerHelper.info("I agree with terms&rules alani secilmediginde cikan mesaj dogrulaniyor");
         Allure.step("I agree with terms&rules alani secilmediginde cikan mesaj dogrulaniyor");
-        Assert.assertTrue(registerPage.getTermAndRulesMessage().isDisplayed(),"I agree with terms&rules alani secilmediginde cikan mesaj dogrulanamadi");
+        Assert.assertTrue(reusableMethods.isWebElementDisplayed(registerPage.getTermAndRulesMessage()),"I agree with terms&rules alani secilmediginde cikan mesaj dogrulanamadi");
 
     }
 
