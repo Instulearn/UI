@@ -114,26 +114,11 @@ Feature: US_04 Register olma islemleri
     Then Password altinda "<message>" uyari mesajinin görüntülendigi dogrulanir
 
     Examples:
-      | fullName | password | retypePassword | errorMessage                                 |
-      | Tugba    | abc.123    | abc.123      | The password must be at least 8 characters.  |
-
-  @TC_004.14
-  Scenario Outline: Kullanıcı 7 haneli password girdiginde dogru uyari mesaji gelmeli
-    Given Kullanici anasayfaya gider
-    When Register butona tiklanir
-    And Email alanina gecerli bir email girilir
-    And Full Name alani "<fullName>" gecerli verilerle doldurulur
-    And Password alani "<password>" ve Retype Password alani "<retypePassword>" olarak doldurulur
-    And I agree with terms&rules secilir
-    And Signup butonuna tiklanir
-    Then Password altinda "<message>" uyari mesajinin görüntülendigi dogrulanir
-
-    Examples:
       | fullName | password | retypePassword | message                                 |
       | Tugba    | abc.123    | abc.123      | The password must be at least 8 characters.  |
 
   @TC_004.15
-  Scenario Outline: Kullanıcı 7 haneli password girdiginde dogru uyari mesaji gelmeli
+  Scenario Outline: Gecersiz formatta girilen password testi
     Given Kullanici anasayfaya gider
     When Register butona tiklanir
     And Email alanina gecerli bir email girilir
@@ -156,7 +141,7 @@ Feature: US_04 Register olma islemleri
     Then Yönlendirilen sayfanin URL'inin 'login' icerdigi dogrulanir
 
   @TC_004.18
-  Scenario Outline: Register page'den login page'e gitme testi
+  Scenario Outline: Eslesmeyen sifre testi
     Given Kullanici anasayfaya gider
     When  Register butona tiklanir
     And Email alanina gecerli bir email girilir
@@ -172,7 +157,7 @@ Feature: US_04 Register olma islemleri
 
 
   @TC_004.19
-  Scenario: Ziyaretci register olma testi
+  Scenario: Ayni maille iki kere register olamama testi
     Given Kullanici anasayfaya gider
     When Register butona tiklanir
     And Register formundaki bütün bilgiler gecerli verilerle doldurulur
