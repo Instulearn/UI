@@ -20,6 +20,7 @@ public class US_018 {
 
     WebDriver driver = DriverManager.getDriver();
     CananPage cananPage = new CananPage(driver);
+    WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
 
     @Given("Kullanıcı ana sayfaya gider")
     public void kullanıcı_ana_sayfaya_gider() {
@@ -30,12 +31,9 @@ public class US_018 {
         Assert.assertTrue(cananPage.footerBolumu.isEnabled());
     }
     @Then("Footer içindeki {string} linki görünür ve aktif olmalıdır")
-
-
     public void footer_icindeki_linki_gorunur_ve_aktif_olmalidir(String linkName) {
 
         WebElement link;
-
         switch (linkName) {
             case "About us":
                 link = cananPage.aboutUsLink;
@@ -52,8 +50,6 @@ public class US_018 {
             default:
                 throw new RuntimeException("Bilinmeyen link: " + linkName);
         }
-
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(link));
         Assert.assertTrue(link.isEnabled(), linkName + " linki aktif değil!");
     }
@@ -66,8 +62,7 @@ public class US_018 {
     }
     @When("Abone ol butonuna tıklar")
     public void abone_ol_butonuna_tıklar() {
-
-       cananPage.subscribeButon.click();
+        cananPage.subscribeButon.click();
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
     }
 
@@ -79,9 +74,7 @@ public class US_018 {
     @Then("{string} ikonu görünür ve aktif olmalıdır")
     public void ikonu_gorunur_ve_aktif_olmalidir(String iconName) {
 
-
         WebElement icon;
-
         switch (iconName) {
             case "Twitter":
                 icon = cananPage.twitterIkon;
@@ -99,7 +92,6 @@ public class US_018 {
                 throw new RuntimeException("Bilinmeyen ikon: " + iconName);
         }
 
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(icon));
 
         Assert.assertTrue(icon.isDisplayed(), iconName + " ikonu görünür değil!");
@@ -108,7 +100,6 @@ public class US_018 {
 
     @Then("Footer'da {string} metni görünür olmalıdır")
     public void footer_da_metni_görünür_olmalıdır(String footerMetni) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(cananPage.footerRightsMetni));
         Assert.assertEquals(cananPage.footerRightsMetni.getText(),footerMetni);
     }
@@ -116,7 +107,6 @@ public class US_018 {
     @When("Footer'daki logo linkine tıklar")
     public void footer_daki_logo_linkine_tıklar() {
         cananPage.footerLogoLink.click();
-
     }
     @Then("Kullanıcı sayfanın en üstüne yönlendirilmelidir")
     public void kullanici_sayfanin_en_ustune_yonlendirilmelidir() {
@@ -124,8 +114,7 @@ public class US_018 {
         assert currentUrl != null;
         Assert.assertTrue(currentUrl.endsWith("/"), "Kullanıcı ana sayfanın başına yönlendirilmedi!");
     }
-
-    }
+}
 
 
 

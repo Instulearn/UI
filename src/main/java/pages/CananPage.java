@@ -85,6 +85,110 @@ public class CananPage extends BasePage {
         @FindBy(xpath = "//footer//div[contains(@class,'footer-logo')]")
         public WebElement footerLogoLink;
 
+        //US41
+        @FindBy(xpath = "//a[normalize-space()='My Courses']")
+        public WebElement myCoursesLink;
+
+        @FindBy(xpath = "//a[contains(text(),'My purchases')]")
+        public WebElement myPurchasesLinkC;
+
+        @FindBy(xpath = "//div[contains(@class,'webinar-card webinar-list')]")
+        public List<WebElement> myPurchasesList;
+
+        @FindBy(xpath = "(//div[contains(@class,'btn-group')]/button)[1]")
+        public WebElement satinAlinandersActionButonu;
+
+        @FindBy(xpath = "//div[contains(@class,'dropdown')]/a[contains(text(),'Invoice')]")
+        public WebElement invoiceButonuC;
+
+        @FindBy(xpath = "/html/body/div[2]/section[2]/div/div[1]/div/div[2]/ul/li[2]/a")
+        public WebElement videoIcerikLinkiC;
+
+        @FindBy(xpath = "//a[contains(text(),'Favorites')]")
+        public WebElement favoritesLinkiC;
+
+        @FindBy(xpath = "//div[@class='row mt-30']/div[contains(@class,'col-')]")
+        public List<WebElement> favoritesList;
+
+        @FindBy(xpath = "(//button[@class='btn-transparent dropdown-toggle'])[1]")
+        public WebElement ilkFavoriActionButonuC;
+
+        @FindBy(xpath = "(//a[normalize-space()='Remove'])[1]")
+        public WebElement ilkFavoriRemoveButonu;
+
+        @FindBy(xpath = "//input[@type='password']")
+        public WebElement passwordInputC;
+
+        @FindBy(xpath = "//button[normalize-space()='Login']")
+        public WebElement loginButtonC;
+
+        @FindBy(xpath = "//span[text()='Courses']/parent::a")
+        public WebElement coursesLinkiC;
+
+        @FindBy(xpath = "//h3[contains(text(),'Dairy Technology')]")
+        public WebElement dairyTechnologyLinkiC;
+
+        //US 29 xpathleri
+        @FindBy(xpath = "//span[contains(text(),'canan')]")
+        public WebElement cananProfileButon;
+
+        @FindBy(xpath = "//a[normalize-space()='Dashboard']")
+        public WebElement cDashboardLink;
+
+        @FindBy(xpath = "//a[@href='#marketingCollapse']")
+        public WebElement marketingMenu;
+
+        @FindBy(xpath = "//a[@href='/panel/marketing/special_offers']")
+        public WebElement discountsLinkC;
+
+        @FindBy(xpath = "//a[@href='/panel/marketing/promotions']")
+        public WebElement promotionsLinkC;
+
+        @FindBy(xpath = "//input[@name='name']")
+        public WebElement discountTitleInputC;
+
+        @FindBy(name = "webinar_id")
+        public WebElement courseDropdownC;
+
+        @FindBy(name = "percent")
+        public WebElement discountAmountInputC;
+
+        @FindBy(xpath = "//input[@name='from_date']")
+        public WebElement fromDateInputC;
+
+        @FindBy(xpath = "//input[@name='to_date']")
+        public WebElement toDateInputC;
+
+        @FindBy(xpath = "//button[@id='formSubmit']")
+        public WebElement createButonuC;
+
+        @FindBy(xpath = "//div[contains(@class,'toast') and contains(text(),'Item added successfully')]")
+        public WebElement successToastMessage;
+
+        @FindBy(xpath = "//div[contains(@class,'subscribe-plan')]")
+        public List<WebElement> promotionPlanListesi;
+
+        @FindBy(xpath = "(//button[contains(text(),'Purchase')])[1]")
+        public WebElement ilkPromosyonPurchaseButonu;
+
+        @FindBy(xpath = "//*[@id='payPromotionModal']/form/div[1]/div/div[3]/select")
+        public WebElement promotionCourseDropdown;
+
+        @FindBy(xpath = "(//button[@class='btn btn-sm btn-primary js-submit-promotion' and text()='Pay'])[2]")
+        public WebElement payButonuC;
+
+        @FindBy(xpath = "//h1[normalize-space()='Checkout']")
+        public WebElement checkoutBasligiC;
+
+        @FindBy(xpath = "//label[@for='offline']")
+        public WebElement accountChargeEtiketiC;
+
+        @FindBy(xpath = "//button[contains(@class, 'btn-primary') and text()='Start Payment']")
+        public WebElement startPaymentButonuC;
+
+        @FindBy(xpath = "//h2[contains(text(),'Congratulations')]")
+        public WebElement congratulationsMesajiC;
+
 
 
 }
