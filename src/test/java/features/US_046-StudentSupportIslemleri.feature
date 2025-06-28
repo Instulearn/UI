@@ -32,10 +32,5 @@ Feature: US_046 Student Dashboard da Support Islemlerini Yonetme
     * Support basligina tiklanir
     * Courses support alt basligina tiklanir
     * Ekrandaki board ogeleri kontrol edilir
-
-    * Subject alanına bilgi girilir
-    * Type secimi yapilir
-    * Department secilir
-    * Message yazilir
-    * Gonder butonuna tiklanir
-    * Logout butonuna tiklanir
+    * Mesaj gecmisi kisminda filtre uygulanir
+    * Bir mesaj secilir ve cevap yazilip kapatilir

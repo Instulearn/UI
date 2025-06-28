@@ -4,6 +4,7 @@ import drivers.DriverManager;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.asserts.SoftAssert;
 import pages.AlpayPage;
 import utils.ReusableMethods;
 
@@ -110,6 +111,41 @@ public class US_046 {
         assertTrue(alpayPage.closedConversations.isDisplayed());
         assertTrue(alpayPage.totalConversations.isDisplayed());
         ReusableMethods.bekle(2);
+
+    }
+    @Given("Mesaj gecmisi kisminda filtre uygulanir")
+    public void mesaj_gecmisi_kisminda_filtre_uygulanir(){
+
+        SoftAssert softAssert = new SoftAssert();
+
+        alpayPage.dateFrom.click();
+        alpayPage.applyFrom.click();
+        ReusableMethods.bekle(2);
+        alpayPage.dateTo.click();
+        alpayPage.applyTo.click();
+        ReusableMethods.bekle(2);
+
+        alpayPage.showResults.click();
+
+        if(alpayPage.noResultsText.isDisplayed()){
+           softAssert.assertFalse(true,"Filtreleme Hatasi");
+           alpayPage.dateFrom.clear();
+           ReusableMethods.bekle(1);
+           alpayPage.dateTo.clear();
+           ReusableMethods.bekle(1);
+           alpayPage.showResults.click();
+           ReusableMethods.bekle(1);
+        }
+        softAssert.assertAll();
+    }
+
+    @Given("Bir mesaj secilir ve cevap yazilip kapatilir")
+    public void bir_mesaj_secilir_ve_kapatilir(){
+
+        alpayPage.firstMessage.click();
+        ReusableMethods.bekle(2);
+        alpayPage.replyMessage.sendKeys("");
+
 
     }
 
