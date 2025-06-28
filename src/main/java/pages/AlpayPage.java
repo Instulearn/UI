@@ -225,4 +225,18 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[contains(text(), 'Send Message')]")
     public WebElement sendTicketMessage;
 
+    @FindBy(xpath ="//*[contains(text(), 'Settings')]")
+    public WebElement dashboardSettings;
+
+    @FindBy(xpath ="//*[contains(text(), 'How To Create Node.js Website')]")
+    public WebElement healthAndFitnessCourse;
+
+    @FindBy(xpath ="//*[@id='paymentSubmit']")
+    public WebElement StartPayment;
+
+    @FindBy(xpath ="//*[contains(text(), 'Buy now')]")
+    public WebElement buyButton;
+
+
+
 }

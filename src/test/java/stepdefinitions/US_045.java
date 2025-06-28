@@ -141,7 +141,7 @@ public class US_045 {
 
         stripeButton.click();
         ReusableMethods.bekle(3);
-        amount.sendKeys("1000");
+        amount.sendKeys("10000");
         payButton.click();
         ReusableMethods.bekle(3);
 
@@ -194,7 +194,7 @@ public class US_045 {
         WebElement paymentSubmit = new AlpayPage(driver).paymentSubmit;
         WebElement activePlan = new AlpayPage(driver).activePlan;
 
-        if (!activePlan.isDisplayed()) {
+
             JSUtilities.scrollToBottom(driver);
             purchase.click();
             ReusableMethods.bekle(4);
@@ -203,10 +203,7 @@ public class US_045 {
             paymentSubmit.click();
             ReusableMethods.bekle(3);
             assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/payments/status");
-
-        } else {
-            ReusableMethods.bekle(3);
-        }
+            ReusableMethods.bekle(2);
     }
 
 }
