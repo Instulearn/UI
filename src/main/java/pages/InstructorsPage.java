@@ -47,6 +47,65 @@ public class InstructorsPage extends BasePage {
     @FindBy(xpath = "//a[@class='js-has-subcategory']")
     private WebElement webDesign;
 
+    @Getter
+    @FindBy(xpath = "//a[@class='btn btn-primary btn-block']")
+    private WebElement reserveButton;
+
+    @Getter
+    @FindBy(xpath = "//td[@data-date='2025,6,30']")
+    private WebElement date;
+
+    @Getter
+    @FindBy(xpath = "//label[@for='availableTime111']")
+    private WebElement time;
+
+    @Getter
+    @FindBy(xpath = "//label[@for='meetingTypeInPerson']")
+    private WebElement meetingType;
+
+    @Getter
+    @FindBy(xpath = "//button[@class='js-submit-form btn btn-primary']")
+    private WebElement reserveMeetingButton;
+
+    @Getter
+    @FindBy(xpath = "//h3[@class='font-16 font-weight-bold text-dark-blue']")
+    private WebElement meetingReservationText;
+
+    @Getter
+    @FindBy(xpath = "//button[@class='btn btn-sm btn-primary mt-15']")
+    private WebElement checkout;
+
+    @Getter
+    @FindBy(xpath = "//label[@for='offline']")
+    private WebElement accountCharge;
+
+    @Getter
+    @FindBy(id = "paymentSubmit")
+    private WebElement startPayment;
+
+    @Getter
+    @FindBy(xpath = "//a[@class='btn btn-sm btn-primary mt-20']")
+    private WebElement myPanel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
