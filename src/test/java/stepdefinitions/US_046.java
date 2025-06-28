@@ -3,6 +3,7 @@ package stepdefinitions;
 import drivers.DriverManager;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 import pages.AlpayPage;
 import utils.ReusableMethods;
 
@@ -53,22 +54,49 @@ public class US_046 {
 
     }
     @Given("Subject alanına bilgi girilir")
-    public void alanına_bilgi_girilir(String string) {
-
+    public void alanina_bilgi_girilir() {
+        alpayPage.subjectTextArea.sendKeys("Payout");
+        ReusableMethods.bekle(2);
     }
     @Given("Type secimi yapilir")
-    public void secimi_yapilir(String string) {
+    public void secimi_yapilir() {
+        Select select = new Select(alpayPage.typeDropdown);
+        select.selectByVisibleText("Platform support");
+        ReusableMethods.bekle(2);
 
     }
-    @Given("Course secimi yapilir")
+    @Given("Department secilir")
     public void course_secimi_yapilir() {
+        Select select = new Select(alpayPage.department);
+        select.selectByVisibleText("Financial");
+        ReusableMethods.bekle(2);
+    }
+
+
+    @Given("Message yazilir")
+    public void message_yazilir() {
+
+        alpayPage.messageTextArea.sendKeys("Yanlislikla hesabima fazla para yukledim ve Payoutdan para iadesi almak istedim ama" +
+                " gerekli bilgileri doldurdugum halde Payout butonu aktif olmadi");
+        ReusableMethods.bekle(5);
 
     }
+
     @Given("Gonder butonuna tiklanir")
-    public void butonuna_tiklanir(String string) {
-
+    public void butonuna_tiklanir() {
+        alpayPage.attachTextArea.sendKeys("/store/1584/download.png");
+        ReusableMethods.bekle(2);
+        alpayPage.sendMessage.click();
+        ReusableMethods.bekle(3);
+        assertTrue(alpayPage.waitingText.isDisplayed());
     }
 
+    @Given("Logout butonuna tiklanir")
+    public void logout_butonuna_tiklanir() {
+        alpayPage.logOut.click();
+        assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/");
+        ReusableMethods.bekle(3);
+    }
 
 
 }
