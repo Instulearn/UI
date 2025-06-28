@@ -48,15 +48,15 @@ public class InstructorsPage extends BasePage {
     private WebElement webDesign;
 
     @Getter
-    @FindBy(xpath = "//a[@class='btn btn-primary btn-block']")
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-block'])[1]")
     private WebElement reserveButton;
 
     @Getter
-    @FindBy(xpath = "//td[@data-date='2025,6,30']")
+    @FindBy(xpath = "(//span[@class='other-month'])[2]")
     private WebElement date;
 
     @Getter
-    @FindBy(xpath = "//label[@for='availableTime111']")
+    @FindBy(xpath = "//label[@for='availableTime85']")
     private WebElement time;
 
     @Getter
@@ -72,7 +72,7 @@ public class InstructorsPage extends BasePage {
     private WebElement meetingReservationText;
 
     @Getter
-    @FindBy(xpath = "//button[@class='btn btn-sm btn-primary mt-15']")
+    @FindBy(xpath = "(//button[@type='submit'])[3]")
     private WebElement checkout;
 
     @Getter
@@ -86,6 +86,28 @@ public class InstructorsPage extends BasePage {
     @Getter
     @FindBy(xpath = "//a[@class='btn btn-sm btn-primary mt-20']")
     private WebElement myPanel;
+
+    @Getter
+    @FindBy(xpath = "(//span[@class='font-20 text-primary font-weight-500'])[2]")
+    private WebElement price;
+
+    @Getter
+    @FindBy(xpath = "(//div[@class='mt-5 font-14 text-gray'])[4]")
+    private WebElement lesson;
+
+    @Getter
+    @FindBy(xpath = "(//div[@class='stars-card d-flex align-items-center  mt-15'])[4]")
+    private WebElement like;
+
+
+
+
+
+
+
+
+
+
 
 
 
