@@ -30,9 +30,13 @@ Feature: US_034 Instructor Islemleri
 
   @TC_034.5
   Scenario: Randevu talebi olusturma testi
-
-    Given Kullanici login sayfasina gider
-    When Kullanici "tugba@tugba.com" ve "abc.12345" ile login olur
+    * Kullanici login sayfasina gider
+    * Kullanici "tugba@tugba.com" ve "abc.12345" ile login olur
+    * Dashboard menu sidebar da Financial basligi goruntulenir ve tiklanir
+    * Charge Account baglantisina tiklanir
+    * Odeme yontemi ve tutar girilerek islem tamamlanir
+    * Instructors yazisina tiklanir
+    * Search box'a "Seraphina Lawson" yazilip aratilir
 
 
 
