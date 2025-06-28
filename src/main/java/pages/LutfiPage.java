@@ -340,6 +340,35 @@ public class LutfiPage extends BasePage {
     @FindBy(xpath = "//h3[text()='Painting tools']")
     public WebElement cartPaintingTitle;
 
+    @FindBy(xpath = "(//a[text()='List'])[2]")
+    public WebElement listLink;
+
+    @FindBy(xpath = "//h2[text()='Active certificates']")
+    public WebElement activeCertificatesTitle;
+
+    @FindBy(xpath = "//label[text()='Course']/following::select[@name='webinar_id']")
+    public WebElement listCourseDropdown;
+
+    @FindBy(xpath = "//label[text()='Quiz']/following::select[@id='quizFilter']")
+    public WebElement listQuizDropdown;
+
+    @FindBy(xpath = "//option[text()='Dairy Technology']")
+    public WebElement listCourseDairyTechnology;
+
+    @FindBy(xpath = "//option[text()='Dairy Tech Quiz']")
+    public WebElement listQuizDairyTechQuiz;
+
+    @FindBy(xpath = "//button[text()='Show Results']")
+    public WebElement listShowResultsButton;
+
+    @FindBy(xpath = "//span[text()='Dairy Technology']")
+    public WebElement activeCertificateDairyTechnology;
+
+    @FindBy(xpath = "//input[@name='grade']")
+    public WebElement gradeGeneralInput;
+
+    @FindBy(xpath = "//label[text()='Grade']")
+    public WebElement gradeGeneralLabel;
 
 
 
