@@ -32,8 +32,8 @@ public class US_003 {
         Assert.assertTrue(filizPage.searchInputBox.isEnabled());
         filizPage.searchInputBox.click();
 
-        @When("Search butonu gorunur ve aktif olmali")
-        public void Search_butonu_gorunur_ve_aktif_olmalı (){
+        //@When("Search butonu gorunur ve aktif olmali")
+       // public void Search_butonu_gorunur_ve_aktif_olmalı (){
 
 
             Assert.assertTrue(filizPage.searchButton.isDisplayed());
@@ -43,7 +43,7 @@ public class US_003 {
         }
     }
 
-}
+
 
 
 
