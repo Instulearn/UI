@@ -216,6 +216,16 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[@name='message']")
     public WebElement replyMessage;
 
+    @FindBy(xpath ="//*[contains(text(), 'Close request')]")
+    public WebElement closeRequest;
+
+    @FindBy(xpath ="(//*[contains(text(), 'Closed')])[2]")
+    public WebElement closedMessageText;
+
+    @FindBy(xpath ="//*[contains(text(), 'Send Message')]")
+    public WebElement sendTicketMessage;
+
+
 
 
 }

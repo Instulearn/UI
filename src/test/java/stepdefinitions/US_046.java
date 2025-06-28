@@ -3,10 +3,14 @@ package stepdefinitions;
 import drivers.DriverManager;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.json.Json;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import pages.AlpayPage;
+import utils.JSUtilities;
 import utils.ReusableMethods;
+
+import java.util.ResourceBundle;
 
 import static org.testng.Assert.*;
 
@@ -93,7 +97,7 @@ public class US_046 {
 
     @Given("Logout butonuna tiklanir")
     public void logout_butonuna_tiklanir() {
-        alpayPage.logOut.click();
+        JSUtilities.clickWithJS(driver, alpayPage.logOut);
         assertEquals(driver.getCurrentUrl(),"https://qa.instulearn.com/");
         ReusableMethods.bekle(3);
     }
@@ -143,9 +147,23 @@ public class US_046 {
     public void bir_mesaj_secilir_ve_kapatilir(){
 
         alpayPage.firstMessage.click();
-        ReusableMethods.bekle(2);
-        alpayPage.replyMessage.sendKeys("");
+        ReusableMethods.bekle(3);
+        JSUtilities.scrollToBottom(driver);
+        alpayPage.replyMessage.sendKeys("Sorun Cozuldu Tesekkurler");
+        ReusableMethods.bekle(3);
+        alpayPage.sendTicketMessage.click();
+        JSUtilities.scrollToBottom(driver);
+        ReusableMethods.bekle(3);
+        alpayPage.closeRequest.click();
+        ReusableMethods.bekle(3);
 
+        assertTrue(alpayPage.closedMessageText.isDisplayed());
+    }
+
+    @Given("Ticket Alt basligina tiklanir")
+    public void ticket_alt_basligina_tiklanir(){
+        JSUtilities.clickWithJS(driver, alpayPage.ticketsBasligi);
+        ReusableMethods.bekle(2);
 
     }
 
