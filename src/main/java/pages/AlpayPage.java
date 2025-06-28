@@ -225,7 +225,4 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[contains(text(), 'Send Message')]")
     public WebElement sendTicketMessage;
 
-
-
-
 }
