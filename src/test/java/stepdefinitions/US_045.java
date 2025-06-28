@@ -167,7 +167,7 @@ public class US_045 {
         }
 
         ReusableMethods.bekle(2);
-        submitButton.click();
+        JSUtilities.clickWithJS(driver,submitButton);
         ReusableMethods.bekle(6);
 
         assertEquals(driver.getCurrentUrl(), "https://qa.instulearn.com/payments/status");

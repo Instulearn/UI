@@ -183,5 +183,49 @@ public class AlpayPage extends BasePage {
     @FindBy(xpath ="//*[contains(text(), 'Log out')]")
     public WebElement logOut;
 
+    @FindBy(xpath ="//*[contains(text(), 'Open conversations')]")
+    public WebElement openConversations;
+
+    @FindBy(xpath ="//*[contains(text(), 'Closed conversations')]")
+    public WebElement closedConversations;
+
+    @FindBy(xpath ="//*[contains(text(), 'Total conversations')]")
+    public WebElement totalConversations;
+
+    @FindBy(xpath ="//*[@name = 'from']")
+    public WebElement dateFrom;
+
+    @FindBy(xpath ="//*[@name = 'to']")
+    public WebElement dateTo;
+
+    @FindBy(xpath ="//*[@type = 'submit']")
+    public WebElement showResults;
+
+    @FindBy(xpath ="(//*[contains(text(), 'Apply')])[1]")
+    public WebElement applyFrom;
+
+    @FindBy(xpath ="(//*[contains(text(), 'Apply')])[2]")
+    public WebElement applyTo;
+
+    @FindBy(xpath ="//*[contains(text(), 'You don')]")
+    public WebElement noResultsText;
+
+    @FindBy(xpath ="(//*[@class='ml-10'])[1]")
+    public WebElement firstMessage;
+
+    @FindBy(xpath ="//*[@name='message']")
+    public WebElement replyMessage;
+
+    @FindBy(xpath ="//*[contains(text(), 'Close request')]")
+    public WebElement closeRequest;
+
+    @FindBy(xpath ="(//*[contains(text(), 'Closed')])[2]")
+    public WebElement closedMessageText;
+
+    @FindBy(xpath ="//*[contains(text(), 'Send Message')]")
+    public WebElement sendTicketMessage;
+
+
+
 
 }
