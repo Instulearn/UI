@@ -7,6 +7,7 @@ Feature: US_046 Student Dashboard da Support Islemlerini Yonetme
     * Dashboard menu sidebar da support menusu oldugunu kontrol eder
     * Support basligina tiklanir
     * Support basliginin altindaki her bir baglantiya tiklanir
+    * Logout butonuna tiklanir
 
 
   @us46
@@ -29,10 +30,7 @@ Feature: US_046 Student Dashboard da Support Islemlerini Yonetme
     * Kullanici "alpay.student@instulearn.com" ve "Learn.1406" ile login olur
     * Dashboard menu sidebar da support menusu oldugunu kontrol eder
     * Support basligina tiklanir
-    * Co
-    * Subject alanına bilgi girilir
-    * Type secimi yapilir
-    * Department secilir
-    * Message yazilir
-    * Gonder butonuna tiklanir
-    * Logout butonuna tiklanir
+    * Courses support alt basligina tiklanir
+    * Ekrandaki board ogeleri kontrol edilir
+    * Mesaj gecmisi kisminda filtre uygulanir
+    * Bir mesaj secilir ve cevap yazilip kapatilir
